@@ -1,0 +1,22 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: #ff0043;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+
+    transition-property: width, height;
+    transition-duration: 0.5s, 1s;
+    transition-delay: 1s; 
+
+    /*同上三列縮減*/
+    /* transition: width 0.5s 1s, heigh 0.5s 1s; */
+    /* transition+變化位置+作動時間+delay時間 */
+}
+.box:hover{
+    width: 200px;
+    height: 200px;
+}

@@ -1,0 +1,48 @@
+.btn{
+     color: #666;
+     text-decoration: none;
+     font-size: 20px;
+     font-family: Arial, Helvetica, sans-serif;
+     position: relative;
+     display: inline-block;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     
+}
+.btn:hover{
+    color: orange;
+}
+.btn:active{
+    color:blue;
+}
+/* 伪元素 */
+.btn:before{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: orange;
+    /* display: inline-block; */
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%);
+    transition:0.3s;
+}
+.btn:after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: orange;
+    /* display: inline-block; */
+    position: absolute;
+    bottom: 0px;
+    right: 50%;
+    transform: translatex(+50%);
+    transition: 0.3s;
+}
+.btn:hover:before{
+    width: 100%;
+}
+.btn:hover:after{
+    width: 100%;
+}

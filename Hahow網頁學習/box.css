@@ -1,0 +1,12 @@
+.box{
+    height: 300px;
+    width: 300px;
+    background-color: #0095ff;
+    display: inline-block;
+    vertical-align: top;
+}
+span{
+    display: block;
+    padding: 20px;
+    margin: 30px;
+}

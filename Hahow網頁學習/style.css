@@ -1,0 +1,37 @@
+.ColorPalette{width: 400px;
+    border: solid 1px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 60px;
+    background-color: #8c1c1c;
+}
+
+
+.color{
+    font-size: 18px;
+    font-family: 微軟正黑體;
+    background-color: #ccc;
+    color: rgb(255, 255, 255); 
+    line-height: 2;
+    text-align: center;
+    margin: 0; 
+}
+.color.color1{
+    background-color: #ACDBC9;
+}
+/* class 越精確權重越高 */
+.color1{
+    background-color: #FFF;
+}
+.color2{
+    background-color: #DBEBC2;
+}
+.color3{
+    background-color: #FDD2B5;
+}
+.color4{
+    background-color: #F7A7A6;
+}
+.color5{
+    background-color: #F48B94;
+    height: 200px;
+}

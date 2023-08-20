@@ -1,0 +1,17 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: #ff3881;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* translate:xy軸變化；rotate旋轉；skew角度變形；scal縮放 */
+}
+.outer{
+    width: 500px;
+    height: 500px;
+    border: 1px solid #000;
+    position: relative;
+    perspective: 1000px;/*深度*/
+}
