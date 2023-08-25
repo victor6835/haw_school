@@ -1,0 +1,27 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+h1{
+    color: red;
+    font-size: 60px;
+}
+nav{
+    background-color: black;
+    text-align: center;
+}
+nav a{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px 20px;
+    font-size: 16px;
+    transition: 0.3s;
+
+}
+nav a:hover{
+    background-color: #fa0;
+}
+p{
+    color: #999;
+}

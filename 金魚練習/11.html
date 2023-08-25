@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 960px;
+            background-color: #e3b0b0;
+            margin: auto;
+        }
+
+        .column {
+            width: 280px;
+            margin: 10px;
+            padding: 10px;
+            background-color: #ccc;
+            float: left;
+        }
+
+        .ooxx {
+            clear: both;
+            /* 把container撐開 */
+            height: 0px;
+        }
+
+        .column img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="column">
+            <img src="https://fakeimg.pl/250x150/aaaaaa/">
+            <h3>title</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error quis vel, accusamus temporibus porro ex
+                velit magni sit voluptate iusto rerum incidunt officiis nulla. Quia deserunt ad ut dolore nisi!</p>
+        </div>
+        <div class="column">
+            <img src="https://fakeimg.pl/250x150/aaaaaa/">
+            <h3>title</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error quis vel, accusamus temporibus porro ex
+                velit magni sit voluptate iusto rerum incidunt officiis nulla. Quia deserunt ad ut dolore nisi!</p>
+        </div>
+        <div class="column">
+            <img src="https://fakeimg.pl/250x150/aaaaaa/">
+            <h3>title</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error quis vel, accusamus temporibus porro ex
+                velit magni sit voluptate iusto rerum incidunt officiis nulla. Quia deserunt ad ut dolore nisi!</p>
+        </div>
+        <div class="ooxx"></div>
+    </div>
+</body>
+
+</html>
