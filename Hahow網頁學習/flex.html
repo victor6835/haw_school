@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .row{
+            background-color: #aacbff;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap; /*設定子元素可換行or不可換行*/
+            /* justify-content: space-around; 等分元素且每個元素周圍保留空隙 */
+            /* justify-content: space-between; 等分且左右貼其邊界 */
+        }
+        .col{
+            height: 300px;
+            background-color: #2f66bc;
+            border: 1px solid #6da6ff;
+            box-sizing: border-box;
+            padding: 0 8px;
+            /* flex: 1;  */
+            width: 20%;
+
+        }
+     
+    </style>
+</head>
+<body>
+    <!-- 使用flex排版 -->
+    <div class="row">
+        <div class="col col-1"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+</body>
+</html>
