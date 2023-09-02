@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        *{
+            position: relative;
+        }
+        html,body{
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+        .wrapper{
+            height: 100%;
+            background-color: #333;
+        }
+        .btn{
+            color: #fff;
+            text-decoration: none;
+            font-family: 微軟正黑體;
+            border: 1px solid #ff1965;
+            background-color: #ff1965;
+            padding: 10px 30px;
+            line-height: 24px;
+            display: inline-block;
+            border-radius: 22px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            overflow: hidden;
+        }
+        .btn:before{
+            content:"";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 0%;
+            padding-top: 100%;
+            background-color: rgba(256, 256, 256, .2);
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+        .btn:hover:before{
+            width: 120%;
+            padding-top: 120%;
+
+        }
+        .btn:active{
+            box-shadow: 0 3px 5px rgba(0, 0, 0,.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <a class="btn" href="#"><span>Button</span></a>
+    </div>
+</body>
+</html>
