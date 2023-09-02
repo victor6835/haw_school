@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+hr{
+    margin: 1rem;
+}
+.container{
+    width: 800px;
+    margin: 0 auto;
+}
+.d_flex{
+    display: flex;
+}
+.outer{
+    padding: 15px;
+    background-color: orange;
+    height: 450px;
+}
+.box{
+    background-color: purple;
+    flex: 1;
+    margin: 3px;
+    color: #fff;
+    font-size: 20px;
+
+    /*垂直水平*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-2{
+    flex-grow: 2;
+}
+
+.w-100p{
+    width: 100px;
+    flex: 0 0 100px;
+/* flex-grow, flex-shrink, flex-basis*/
+}
