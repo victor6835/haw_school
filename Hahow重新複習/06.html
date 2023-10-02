@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .btn{
+            color: #666;
+            font-size: 20px;
+            font-family: arial;
+            line-height: 140%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+            position: relative;
+            display: inline-block;
+        }
+        .btn:hover{
+            color: #ff9b19;
+        }
+        .btn:active{
+            color: red;
+        }
+        .btn::before{
+            content: "";/*before, after 都需要加content才能顯示*/
+            width: 0%;
+            height: 3px;
+            background-color: #ff9b19;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: .3s;
+        }
+        .btn:hover::before{
+            width: 100%;
+        }
+        .btn::after{
+            content: "";/*before, after 都需要加content才能顯示*/
+            width: 0%;
+            height: 3px;
+            background-color: #ff9b19;
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            transition: .3s;
+        }
+        .btn:hover::after{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn" href="#">This is a link</div>
+    
+</body>
+</html>

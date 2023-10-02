@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        p{
+        .color{
             color: #fff;
             line-height: 2;
             font-size: 18px;
@@ -15,10 +15,24 @@
             text-align: center;
             margin: 0;
         }
+        #card{
+            width: 400px;
+        }
         .colorPalette{
-            width: 300px;
-            /* border: 1px dashed black; */
+            width: 400px;
             box-shadow: 5px 5px 20px rgba(0,0,0,0.5);
+            /* height: 500px; */
+            background-color: #ccc;
+            /* padding: 50px; */
+            margin-bottom: 50px;
+            /* box-sizing: border-box; */
+            border: 1px solid #000;/*解決margin塌陷*/
+        }
+        div{
+            /* width: 200px !important; */
+        }
+        .colorPalette .color1{
+            /* background-color: #000; */
         }
         .color1{
             background-color: #ACDBC9;
@@ -35,19 +49,21 @@
         .color5{
             background-color: #F48B94;
             height: 200px;
+            margin-bottom: 30px;
         }
     </style>
 </head>
 
 <body>
     
-<div class="colorPalette">
-    <p class="color1">#ACDBC9</p>
-    <p class="color2">#DBEBC2</p>
-    <p class="color3">#FDD2B5</p>
-    <p class="color4">#F7A7A6</p>
-    <p class="color5">#F48B94</p>
+<div class="colorPalette" id="card">
+    <p class="color color1">#ACDBC9</p>
+    <p class="color color2">#DBEBC2</p>
+    <p class="color color3">#FDD2B5</p>
+    <p class="color color4">#F7A7A6</p>
+    <p class="color color5">#F48B94</p>
 </div>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, sunt!</p>
 </body>
 
 </html>

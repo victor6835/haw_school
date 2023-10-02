@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        *{
+            position: relative;
+        }
+        body,html{
+            height: 100%;
+        }
+        .wrapper{
+            background-color: #1e1e1e;
+            height: 100%;
+        }
+        .btn{
+            color: #fff;
+            text-decoration: none;
+            background-color: #fb3;
+
+            border: 1px solid #fb3;
+            line-height: 56px;
+            width: 56px;
+            border-radius: 28px;
+            position: absolute;
+            top: 100px;
+            right: 100px;
+
+            transition: all .3s;
+            overflow: hidden;
+
+        }
+        .btn:hover{
+            padding: 0 25px;
+            background-color: #1e1e1e;
+            width: auto;
+
+
+        }
+        .btn::after{
+            content: "+";
+            font-size: 40px;
+            position: absolute;
+            top: 0;
+            right: 16px;
+            opacity: 1;
+        }
+        .btn:hover::after{
+            opacity: 0;
+        }
+        .btn span{
+            opacity: 0;
+            white-space: nowrap;
+        }
+        .btn:hover span{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <a href="#" class="btn"><span>see more</span></a>
+    </div>
+</body>
+</html>

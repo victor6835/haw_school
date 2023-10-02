@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #ff3881;
+            position: absolute;
+            top: 50%;
+            /*依據外框去推*/
+            left: 50%;
+            /*依據外框去推*/
+            transform: translate(-50%, -50%) scale(2) rotate(45deg);
+            /*依據自身50%去推，大小兩倍，向右旋轉45度*/
+        }
+
+        .box:hover {
+            width: 200px;
+            height: 200px;
+            background-color: #fae;
+        }
+
+        .box:active {
+            background-color: #0ae;
+        }
+
+
+        .outter {
+            width: 600px;
+            height: 600px;
+            border: 1px solid #000;
+            position: relative;
+            perspective: 100px;
+            /*深度*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outter">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>
