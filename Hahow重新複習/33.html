@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .row{
+            background-color: #aacbff;
+            padding: 20px;
+        }
+        .col{
+            height: 300px;
+            background-color: #2f66bc;
+            border: 1px solid #6da6ff;
+
+            box-sizing: border-box;
+            width: 33.3333%;
+            padding: 0 8px;
+
+            float: left;
+        }
+        .content{
+            background-color: #fff;
+        }
+
+        /* cliarfix可用after寫 */
+        .clearfix::after{
+            content: "";
+            clear: both;
+            display: block;
+            visibility: hidden;
+        }
+        .footer{
+            height: 64px;background-color: #666;
+            /* clear: both; */
+        }
+    </style>
+</head>
+<body>
+    <div class="row clearfix">
+        <div class="col">
+            <div class="content">
+                <p>1.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente ipsa saepe praesentium, voluptatem possimus accusantium rerum distinctio necessitatibus? Aspernatur odio unde quisquam corporis voluptates tempore rerum vel, aliquam error labore.</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="content">
+                <p>1.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente ipsa saepe praesentium, voluptatem possimus accusantium rerum distinctio necessitatibus? Aspernatur odio unde quisquam corporis voluptates tempore rerum vel, aliquam error labore.</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="content">
+                <p>1.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente ipsa saepe praesentium, voluptatem possimus accusantium rerum distinctio necessitatibus? Aspernatur odio unde quisquam corporis voluptates tempore rerum vel, aliquam error labore.</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="content">
+                <p>1.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente ipsa saepe praesentium, voluptatem possimus accusantium rerum distinctio necessitatibus? Aspernatur odio unde quisquam corporis voluptates tempore rerum vel, aliquam error labore.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

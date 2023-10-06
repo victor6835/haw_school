@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .outter {
+            height: 300px;
+            border: 1px solid #000;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #68a2ff;
+        }
+
+        /* margin: 0 auto; display需是block，寬度需要是一個定值 */
+        .box1 {
+            margin: 0 auto;
+        }
+
+        /* inline 系列 */
+        .outter2 {
+            text-align: center;
+            /*把裡面的元素當作文字一樣置中*/
+        }
+
+        .outter2 .box {
+            display: inline-block;
+        }
+
+        /* flex */
+        .outter3 {
+            display: flex;
+            justify-content: center;
+            /*1.純水平*/
+            /*align-items: center;*/
+            /*2.純垂直*/
+        }
+
+        .outter3 .box {
+            /*margin: auto;*/
+            /*3.水平及垂直*/
+            /*align-self: center;*/
+            /*4.純垂直*/
+        }
+
+        /* position: absolute; */
+        .outter4 {
+            position: relative;
+        }
+
+        .outter4 .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* 文字的置中 */
+        .box5 {
+            text-align: center;
+            /*1.純水平*/
+            line-height: 200px;
+            /*2.利用行高 = 元素高  達到文字垂直置中*/
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ///////////////////////////////////////
+哈囉~ 你可以試試看多增加幾個 .box 元素，
+看看會有什麼樣的變化喔！
+/////////////////////////////////////////// -->
+
+    <!-- margin: 0 auto; 的置中方式 -->
+    <h2>margin: 0 auto; 的置中方式</h2>
+    <div class="outter">
+        <div class="box box1">讓我置中，拜託</div>
+    </div>
+
+    <!-- inline-block, inline 行内元素的置中方式 -->
+    <h2>inline-block, inline 行内元素的置中方式</h2>
+    <div class="outter outter2">
+        <div class="box">讓我置中，拜託</div>
+        <div class="box">讓我置中，拜託</div>
+    </div>
+
+    <!-- flex 彈性排版的置中方式 -->
+    <h2>flex 彈性排版的置中方式</h2>
+    <div class="outter outter3">
+        <div class="box">讓我置中，拜託</div>
+        <div class="box">讓我置中，拜託</div>
+    </div>
+
+    <!-- position: absolute 絕對定位的置中方式 -->
+    <h2>position: absolute 絕對定位的置中方式</h2>
+    <div class="outter outter4">
+        <div class="box">讓我置中，拜託</div>
+    </div>
+
+    <!-- 文字的置中  -->
+    <h2>文字的置中</h2>
+    <div class="outter">
+        <div class="box box5">讓我置中，拜託</div>
+    </div>
+
+</body>
+
+</html>
