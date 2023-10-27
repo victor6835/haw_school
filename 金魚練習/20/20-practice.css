@@ -1,0 +1,137 @@
+
+.header {
+    background-color: #000;
+    display: flex;
+    padding: 6px 10px;
+}
+
+.header nav {
+    text-align: right;
+    width: 100%;
+    font-size: 0;
+}
+
+.header nav a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 52px;
+    padding: 0 10px;
+}
+
+.header nav a:hover {
+    background-color: #fa0;
+}
+.header .logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.banner img{
+    width: 100%;
+}
+.path{
+    font-size: 0;
+}
+.path ul{
+    display: flex;
+}
+.path li{
+    position: relative;
+    padding: 8px 8px 8px 0;
+}
+.path li a{
+    font-size: 16px;
+    text-decoration: none;
+    color: #aaa;
+}
+.path li+li::before{
+    content: "/";
+    color: #aaa;
+    position: absolute;
+    left: 0;
+}
+.wrap{
+    width: 960px;
+    margin: auto;
+}
+
+.about{
+    padding: 24px;
+    text-align: center;
+}
+.about img{
+    border-radius: 50%;
+}
+.about > h2{
+    font-size: 42px;
+    padding: 40px 0;
+}
+.about > .wrap{
+    display: flex;
+    padding: 40px 0;
+}
+.about > .wrap h2{
+    font-size: 24px;
+}
+.about p{
+    font-size: 16px;
+    padding: 24px;
+}
+
+.products {
+    background-color: #ccc;
+    width: 100%;
+}
+
+.products>.wrap {
+    padding: 40px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.products .item {
+    width: 50%;
+}
+
+.products .item img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.products .pic {}
+
+.products .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.services{
+    padding: 40px;
+    background-color: #fa0;
+    text-align: center;
+
+}
+.services > h2{
+    font-size: 40px;
+    padding: 20px;
+}
+.services p{
+    font-size: 16px;
+    padding: 24px;
+}
+.services .wrap{
+    display: flex;
+}
+.footer{
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+}
+
