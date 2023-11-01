@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("true: ", true, "<br>");
+        document.write("false: ", false, "<br>");
+        </script>
+    <script>
+        document.write("undefined: ", undefined, "<br>");
+        document.write("null: ", null,"<br>");
+        </script>
+
+
+
+
+<!-- <table  border='1' cellspacing='0'>
+	<tr><th>姓名</th><td>Ann</td></tr>
+    <tr><td>到職日</th><td>2000-02-02</td></tr>
+</table> -->
+
+<h2>ES6之前.....</h2>
+<script type="text/javascript">
+//-----------1
+//單引號或雙引號不能簡單的寫成多行
+var str = "<table border='1' cellspacing='0'>"; 
+    str += "<tr><th>姓名</th><td>Ann</td></tr>";
+    str += "<tr><th>到職日</th><td>2000-02-02</td></tr>"; 
+    str += "</table>"; 
+document.write(str);
+
+//-----------2
+//輸出的網頁結構中若含有變數, 必須詳細串結
+var name = 'Ann';
+var hiredate = "1986-03-15";
+var salary = 55500;	
+var html = '<table border="1" cellspacing="0">';
+html += '<tr><th>姓名</th><td>' + name + '</td></tr>';
+html += '<tr><th>薪資</th><td>' + hiredate + '</td></tr>';
+html += '<tr><th>到職日</th><td>' + salary + '</td></tr>';
+html +=  '</table>';
+
+document.write( html);	
+
+
+
+
+</script>
+
+<h2>ES6 的反引號字串</h2>
+<script>
+//-----------1    
+//ES6可以使用反引號讓字串以多行形式呈列
+var html;
+
+
+
+//-----------2   
+//反引號中可以使用${}內放入變數或運算式或呼叫函式	
+//字串可寫成多行
+//  
+var name = "Alice";
+var hiredate = "1986-03-15";
+var salary = 50000;
+var html = `<table border='1' cellspacing="0">
+				<tr><th>姓名</th><td>${name}</td></tr>
+				<tr><th>薪資</th><td>${hiredate}</td></tr>
+				<tr><th>到職日</th><td>${salary}</td></tr>
+			</table>`;
+
+</script>
+    <h2>反引號才有template功能-var宣告才有用</h2>
+
+
+
+    <h2>算術</h2>
+    <script>
+        document.write( "10*4 : ", 10*4, "<br>"); //40
+        document.write( "10/4 : ", 10/4, "<br>"); //2.5
+        document.write( "10%4 : ", 10%4, "<br>"); //2
+    </script>
+
+    <h2>字串</h2>
+    <script>
+        var zone = "中壢區";
+        var road = "復興路46號";
+        var adress = zone + road;
+        document.write( "adress :", adress, "<br>");
+    </script>
+
+    <script>
+        var a = 10/"victor" 
+    </script>
+<h2>嚴格的相等比較 === vs. 寛鬆的相等比較 == </h2>
+<script>
+	document.write( "10>4 : ", 10>4 ,"<br>"); //
+	document.write( "10<=4 : ", 10<=4, "<br>");  //
+
+	document.write( "0===false : ", 0===false,"<br>"); //
+	document.write( "0==false : ", 0==false,"<br>"); //
+</script>
+
+<script>
+	document.write( "10>4 && 10<6 : ", 10>4 && 10<6, "<br>"); //false
+	document.write( "10>4 || 10<6 : ", 10>4 || 10<6, "<br>"); //true
+	document.write( "! 10>4  : ", ! 10>4, "<br>"); //------注意 false>4==> 0>4
+
+    document.write( "! 2>4  : ", 2>4, "<br>");  //false>4 ==>false   
+    /*not 2 = false, false = 0, 0>4為false*/
+   
+    document.write( "!(2>4)  : ", !(2>4), "<br>"); //! false ==> true
+
+	//運算優先序
+	//!(not) 
+	//*, /
+	//+, -
+	//>, >=, < , <=   
+	//&&, || 
+</script>
+
+<h2>位元運算(Bitwise Operators)，用來執行二進位值的位元運算，通常用在某些較特定的領域</h2>
+<script>
+    document.write( "10 & 6 : ", 10 & 6, "<br>"); //2
+    document.write( "10 | 6 : ", 10 | 6, "<br>"); //14
+    
+</script>
+
+<h2>• 指定運算</h2>
+<script>
+    var x = 10;
+	x += 2; //??????改寫
+	document.write( "x : ", x, "<br>");
+
+	var y = 100;
+	y *= 3; //??????改寫
+	document.write( "y : ", y, "<br>");
+
+	var mm ,nn ,kk ; //mm:undefined, nn:undefined, kk: undefined
+
+	mm = 10;
+	nn = 10;
+	kk = 10;
+
+    kk= nn = mm =1000;
+
+	document.write( "mm : ", mm, "<br>");
+	document.write( "nn : ", nn, "<br>");
+	document.write( "kk : ", kk, "<br>");
+
+</script>
+
+<h2>typeof</h2>
+<script>
+    var price = "100";
+    document.write("typeof price:", typeof price, "<br>");
+</script>
+
+<h2>++在前-----1</h2>
+<script>
+	var x = 10;
+	var y = ++x + 5;
+	document.write( "x : ", x, "<br>"); //??
+	document.write( "y : ", y, "<br>"); //??
+    // x=x+1;y=x+5//
+</script>
+
+<h2>++在後-----1</h2>
+<script>
+	var x = 10;
+	var y = x++ + 5;
+	document.write( "x : ", x, "<br>"); //??
+	document.write( "y : ", y, "<br>"); //??
+    // y=x+5;x=x+1//
+
+</script>
+
+<h2>++在前-----2</h2>
+<script>
+	a = 10;
+	b = ++a + ++a;  
+	document.write( "a : ", a, "<br>"); //??
+	document.write( "b : ", b, "<br>"); //??
+</script>
+
+<h2>++在後-----2</h2>
+<script>
+	a = 10;
+	b = a++ + a++;  
+	document.write( "a : ", a, "<br>"); //??
+	document.write( "b : ", b, "<br>"); //??
+</script>
+
+<!-- </script>  -->
+<!--  
+<h2>常數</h2>
+<script>--------------------------
+常數: **const PI = 3.14159;**
+------------------------------------
+//PI = 3; //此行會error
+document.write("PI : ", PI, "<br>");
+
+</script>
+</body>
+</html>
