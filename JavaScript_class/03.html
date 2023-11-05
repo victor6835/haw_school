@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>秒數轉換成時分秒</title>
+</head>
+<body>
+    <p id="timeDisplay">時間將會在此顯示</p>
+
+    <script>
+        // 取得目前時間到起始時間的秒數
+        const secondsPassed = 12345; // 這裡填入你所要使用的秒數
+
+        // 轉換秒數為時分秒格式
+        const hours = Math.floor(secondsPassed / 3600);
+        const minutes = Math.floor((secondsPassed % 3600) / 60);
+        const seconds = secondsPassed % 60;
+
+        // 建立時間字串
+        const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        // 顯示在網頁上
+        document.getElementById("timeDisplay").textContent = `經過的時間為：${timeString}`;
+    </script>
+</body>
+</html>
+

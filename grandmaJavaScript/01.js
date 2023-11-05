@@ -30,7 +30,7 @@ my_name = true
 document.write(my_name);
 
 
-document.write('有一個人叫'+my_name)
+document.write('有一個人叫' + my_name)
 document.write("<br>")
 document.write('小黑今年87歲')
 document.write("<br>")
