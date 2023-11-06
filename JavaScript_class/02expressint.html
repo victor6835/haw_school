@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02expressint.html</title>
+</head>
+
+<body>
+    <script>
+        var totalSeconds = prompt("今天過幾秒了"); // 要計算的總秒數
+
+        var hours = Math.floor(totalSeconds / 3600); // 小時數
+        var minutes = Math.floor((totalSeconds % 3600) / 60); // 分鐘數
+        var seconds = totalSeconds % 60; // 秒數
+
+        document.write(hours + "小時 " + minutes + "分鐘 " + seconds + "秒");
+
+    </script>
+</body>
+
+</html>
+
+<!-- <script>
+    var secondsPassed = prompt("今天過了幾秒了?");
+    var hours = (secondsPassed / 3600);
+    var minutes = ((secondsPassed - hours * 3600) / 60);
+    var seconds = (minutes % 60);
+    document.write("經過" + hours + "小時" + minutes + "分" + seconds + "秒");
+</script> -->
