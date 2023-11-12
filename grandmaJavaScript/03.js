@@ -18,3 +18,4 @@ document.write("<br>")
 document.write(Math.sqrt(64));/*回傳開根號值*/
 document.write("<br>")
 document.write(Math.round(Math.random()*10));/*回傳隨機數值*/
+document.write('<br>')
