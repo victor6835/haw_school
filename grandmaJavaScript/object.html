@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>object</title>
 </head>
+
 <body>
     <script>
         // 物件 object
-        
+
         // key   value
         // 鍵     值
+        //注意不同key之間是逗號,不是分號;
+
+
+        var person = {
+            name: "fuck you",
+            age: 23,
+            is_male: true,
+            print_name: function () {
+                document.write(this.name);//同person.name
+            }
+        }
+
+        document.write(person.name);
+        person.print_name();
+        
+
+
+    </script>
+
+    <script>
+        var movie = {
+            title: "刻在你心底的名字",
+            maker: "氧氣電影",
+            duration: 114,
+            actors:[
+                {
+                    name: "陳昊森",
+                    age: 24,
+                    is_male: true,
+                },z
+                {
+                    name: "曾敬驊",
+                    age: 23,
+                    is_male: true,
+                }
+            ]
+        }
+        document.write(movie.actors[0].age);
     </script>
 </body>
+
 </html>
