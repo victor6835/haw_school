@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>homework1</title>
-</head>
 
 <body>
     <h2>作業 01：寫程式，設定變數存放今天的攝氏温度(30)，請寫程式將其轉換成華氏温度，請將轉換的結果顯示在頁面上。註：華氏= (攝氏)(9/5) + 32</h2>
@@ -123,4 +116,3 @@
 
 </body>
 
-</html>

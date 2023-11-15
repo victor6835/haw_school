@@ -1,0 +1,118 @@
+
+
+<body>
+    <h2>作業 01：寫程式，設定變數存放今天的攝氏温度(30)，請寫程式將其轉換成華氏温度，請將轉換的結果顯示在頁面上。註：華氏= (攝氏)(9/5) + 32</h2>
+    <script>
+        var celsiusTemperature = 30;
+        var fahrenheitTemperature = (celsiusTemperature * 9 / 5) + 32;
+
+        document.write("攝氏" + celsiusTemperature + "度等於華氏" + fahrenheitTemperature + "度");
+    </script>
+
+    <h2>作業 02： 02expressint.html (變數與運算式) 
+        寫程式，設定變數存放今天到目前為止所經過的秒數(比如8000秒)，請將其轉換成時分秒後顯示在頁面上。</h2>
+
+    <script>
+        var totalSeconds = prompt("今天過幾秒了"); // 要計算的總秒數
+
+        var hours = Math.floor(totalSeconds / 3600); // 小時數
+        var minutes = Math.floor((totalSeconds % 3600) / 60); // 分鐘數
+        var seconds = totalSeconds % 60; // 秒數
+
+        document.write(hours + "小時 " + minutes + "分鐘 " + seconds + "秒");
+
+    </script>
+    <h2>作業 04： 04orangeIf.html  (if練習)
+        寫程式，設定變數存放橘子一斤的單價，及購買的斤數，並算出小計為何,
+        若消費金額超過500元, 則打九折</h2>
+
+    <script>
+        // 設定橘子一斤的單價
+        const orangePricePerKg = 30;
+
+        // 購買的橘子斤數
+        const purchasedWeight = 5;
+
+        // 計算小計
+        const subtotal = orangePricePerKg * purchasedWeight;
+
+        // 判斷是否滿 500 元並套用九折折扣
+        let total;
+
+        if (subtotal > 500) {
+            total = subtotal * 0.9; // 九折
+        } else {
+            total = subtotal;
+        }
+
+        console.log("橘子小計：" + subtotal + " 元");
+        console.log("總金額：" + total + " 元");
+
+    </script>
+    <h2>作業 05：05orangeIf_2.html (if練習)
+        寫程式，設定變數存放一斤的單價，及購買的斤數，並算出小計為何,
+        若消費金額超過500元, 則打九折,
+        若消費金額超過1000元, 則打七折</h2>
+    <script>
+        // 設定一斤的單價
+        const pricePerKg = 50;
+
+        // 購買的斤數
+        const purchasedWeight = 3;
+
+        // 計算小計
+        const subtotal = pricePerKg * purchasedWeight;
+
+        // 判斷消費金額並套用相應的折扣
+        let total;
+
+        if (subtotal > 1000) {
+            total = subtotal * 0.7; // 七折
+        } else if (subtotal > 500) {
+            total = subtotal * 0.9; // 九折
+        } else {
+            total = subtotal;
+        }
+
+        console.log("小計：" + subtotal + " 元");
+        console.log("總金額：" + total + " 元");
+
+    </script>
+    <h2>
+        作業 06：06orangeIf_3.html (if、switch練習) 
+        橘子的單價和等級的關係如下:
+    </h2>
+    <h2>作業 07　 07forSum.html (迴圈..練習)
+        寫程式，設定變數存放一個正整數,並算1 到此整數間的總和、奇數和、偶數和</h2>
+    <script>
+        // 設定一個正整數
+        const n = 10; 
+
+        // 初始化總和、奇數和、偶數和
+        let sum = 0;
+        let oddSum = 0;
+        let evenSum = 0;
+
+        // 計算總和、奇數和、偶數和
+        for (let i = 1; i <= n; i++) {
+            sum += i;
+
+            if (i % 2 === 1) {
+                oddSum += i; // 奇數
+            } else {
+                evenSum += i; // 偶數
+            }
+        }
+
+        // 輸出結果
+        console.log("1 到 " + n + " 的總和為：" + sum);
+        console.log("1 到 " + n + " 的奇數和為：" + oddSum);
+        console.log("1 到 " + n + " 的偶數和為：" + evenSum);
+
+    </script>
+    <h2>作業08　08prizeFor.html (迴圈 for…, Math練習)  
+        摸彩金 : 有11顆彩球, 彩球面額為0-10之間, 可以摸彩10次, 印出其每次的摸彩金額及彩金總金額(單位:佰元)</h2>
+        
+
+</body>
+
