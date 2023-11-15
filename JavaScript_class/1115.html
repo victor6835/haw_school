@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11/15</title>
+</head>
+
+<body>
+    <h2>break : 1加到多少會大於1000</h2>
+
+    <script>
+        var sum = 0;
+        for (let i = 1; i <= 1000; i++) {
+            sum += i;
+            if (sum > 1000) {
+                document.write(`1家到${i}等於${sum}2大於1000<br>`);
+                break;
+
+                //反引號中可以使用${}內放入變數或運算式或呼叫函式
+            }
+        }
+    </script>
+    <h2>continue 印出50個3的倍數</h2>
+    <script>
+        var total = 0;
+
+        for (var i = 1; i <= 50; i++) {
+            if (i % 3 !== 0) {
+                continue;
+            }
+            document.write(i, "<br>");
+            total = total + i;
+        }
+        document.write("總和 : ", total, "<br>");
+    </script>
+
+    <h2>for() 的let</h2>
+    <script>
+        let ii = 1000;
+        for(let ii= 1; ii<=10; ii++){
+            document.write(ii);
+        }
+        document.write("<br>")
+        document.write("ii:", ii, "<br>");
+        //ii仍是1000
+
+    </script>
+    <h2>for() 的let-2</h2>
+    <script>
+        let total = 0;
+        for(let j = 1; j<=10; j++){
+            let j = 100;//{{}內的j區塊作用愈}
+            total += j;
+        }
+        document.write("total:", total, "<br>");
+    </script>
+
+
+</body>
+
+</html>
