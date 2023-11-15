@@ -39,7 +39,7 @@
     <h2>for() 的let</h2>
     <script>
         let ii = 1000;
-        for(let ii= 1; ii<=10; ii++){
+        for (let ii = 1; ii <= 10; ii++) {
             document.write(ii);
         }
         document.write("<br>")
@@ -50,11 +50,35 @@
     <h2>for() 的let-2</h2>
     <script>
         let total = 0;
-        for(let j = 1; j<=10; j++){
+        for (let j = 1; j <= 10; j++) {
             let j = 100;//{{}內的j區塊作用愈}
             total += j;
         }
         document.write("total:", total, "<br>");
+    </script>
+    <h2>建立陣列</h2>
+    <script>
+        // 建立陣列, 使用 new 
+        var arr = new Array(11, 12, 13)
+        // 使用陣列變數 [索引]來取得陣列中的資料
+        document.write("arr[0] : ", arr[0], "<br>");
+        document.write("arr[1] : ", arr[1], "<br>");
+        document.write("arr[2] : ", arr[2], "<br>");
+        // 利用迴圈技巧來簡化程式
+        for (let i = 0; i < 3; i++) {
+            document.write(arr[i], "<br>");
+        }
+    </script>
+    <h2>------------陣列的length屬性--------2</h2>
+    <script>
+        var arr = new Array(11, 22, 33);
+        var length = arr.length;//先把arr.length值抄出來
+        // 使用for 搭配陣列的length屬性
+        // 注:可用資料之索引值比長度少1
+        // arr.length每次會重新計算長度
+        for (let i = 0; i < length; i++) {
+            document.write("arr[i] : ", arr[i], "<br>");
+        }
     </script>
 
 
