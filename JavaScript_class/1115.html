@@ -80,7 +80,62 @@
             document.write("arr[i] : ", arr[i], "<br>");
         }
     </script>
+    <h2>其內的資料可以是不同的型別</h2>
+    <script>
+        var arr = new Array(11, true, "Hello, world!");
+        for (var i = 0; i < arr.length; i++) {
+            document.write("arr[i] : ", arr[i], "<br>");
+        }
+    </script>
 
+    <h2>------------陣列在JavaScr
+        ipt中可以動態的配置</h2>
+    <script>
+        var arr = new Array(11, 22, 33);
+        //超額使用, 將100放入索引值6的位置
+        arr[6] = 100;
+
+        //輸出資料, 使用for句型
+        var length = arr.length;
+        for (let i = 0; i < length; i++) {
+            document.write("arr[i] : ", arr[i], "<br>");
+        }
+    </script>
+
+    <h2>------------使用foreach句型: for( i in arr) </h2>
+    <script>
+        var arr = new Array(11, 22, 33);
+        //超額使用, 將100放入索引值6的位置
+        arr[6] = 100;
+
+        //輸出資料, 使用foreach句型, 變數i取到的是鍵值, 以陣列而言就是索引值
+        for (let i in arr) {
+            document.write(arr[1], "<br>");}
+
+    </script>
+
+    <h2>------------使用foreach句型: for( data of arr) </h2>
+    <script>
+            var arr = new Array(11, 22, 33);
+            // 超額使用, 將100放入索引值6的位置
+            arr[6] = 100;
+
+            //輸出資料, 使用foreach句型, 變數data:取到的是資料本身
+            //??????
+    </script>
+    <h2>將陣列中的資料串接成字串------自己做</h2>
+    <script>
+        var arr = new Array(11, 22, 33);
+        var str = "";
+
+        for(var i=0; i<arr.length-1; i++){//i=0
+            str += arr[1] + ",";
+        }
+        str += str + arr[i];
+
+            //印出字串
+            document.write(str, "<br>");
+    </script>
 
 </body>
 
