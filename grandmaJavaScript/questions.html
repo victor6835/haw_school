@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問答程式</title>
+</head>
+<body>
+    <script>
+        var questions = [
+            {
+                prompt:"香蕉是甚麼顏色?(a)紅色(b)綠色(c)黃色",
+                answer:"c"
+            },
+            {
+                prompt:"草莓是甚麼顏色(a)紅色(b)紫色(c)黃色?",
+                answer:"a"
+            },
+            {
+                prompt:"一公尺等於幾公分?(a)1(b)10(c)100?",
+                answer:"c"
+            }
+        ]
+        var score = 0;
+        for(var i=0; i<questions.length; i++){
+            var input=prompt(questions[i].prompt);
+            if(input==questions[i].answer){
+                score++;
+                alert("答對了");
+            }
+            else{
+                alert("答錯了")}
+        }
+        alert("總共答對了" + score + "題");
+    </script>
+    
+</body>
+</html>                                                         
