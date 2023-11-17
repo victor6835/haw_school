@@ -194,6 +194,106 @@
         arr.sort();
         document.write(arr, "<br>");	
     </script>
+
+
+    <h2>自己排</h2>
+    <script>
+        var arr = [40, 20, 50, 70, 30, 80, 7];
+
+        for (let i = 0; i < 6; i++) {
+            for (let j = i + 1; j <= 6; j++) {
+                if (arr[i] > arr[j]) {
+                    let temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        document.write(arr, "<br>");
+    </script>
+
+    <h2>使用sort() 搭配compare function---由小到大(大到小則b-a)</h2>
+    <script>
+        var arr = [40, 20, 50, 70, 30, 80, 7];
+        function compareAsc(a, b) {
+            return a - b;
+        }
+
+        arr.sort(compareAsc);//在此例中，compare function 是 callback function
+        document.write(arr, "<br>");	
+    </script>
+
+
+    <h2>按照字串長度來排序</h2>
+    <script>
+        var sentences = [
+            "No cross,no crown.",
+            "Sometime ever, sometime never.",
+            "You don’t have time to be timid.",
+            "Treat yourself well.",
+            "No fear of words, no fear of years.",
+            "Don’t let the past steal your present.",
+            "Be cheerful and hopeful."
+        ];
+        function shortTolong(str1, str2) {
+            return str1.length - str2.length;
+        }
+        sentences.sort(shortTolong)
+        for (let data of sentences) {
+            document.write(data, "<br>");
+        }
+
+
+
+    </script>
+
+
+    <h2>array-callback</h2>
+    <script>
+        function toHtml(data) {
+            document.write(data, "<br>")
+        }
+        var arr = [11, 22, 33];
+        arr.forEach(toHtml);
+    </script>
+
+
+    <h2>array-map()</h2>
+    <script>
+        function double(data) {
+            return data * 2;
+        }
+
+        var arr = [11, 22, 33];
+        var arr2 = arr.map(double);//[22,44,66]
+
+        document.write(arr2);
+    </script>
+
+
+    <h2>array.map()-----2</h2>
+    <script>
+        function adjustSalary(data) { //data:22
+            return data + 1000;
+        }
+
+        var arr = [10000, 20000, 30000];
+        var arr2 = arr.map(adjustSalary); //[11000, 21000, 31000]
+
+        document.write(arr2);
+    </script>
+
+    <h2>array.filter()</h2>
+    <script>
+        var price = [660,26,450,53,1100,265];
+
+        function lowerPrice(data){
+            return data<500;
+        }
+        var arr2 = prices.filter(lowerPrice);
+        document.write(arr2,"<br>");
+    </script>
+
 </body>
 
 </html>
