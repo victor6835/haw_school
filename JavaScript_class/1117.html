@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11/17</title>
+</head>
+
+<body>
+
+    <h2>isNaN()</h2>
+    <script>
+        document.write("isNaN('32000') : ", "<br>"); //?????
+        document.write("isNaN('*#@') : ", "<br>"); //?????
+    </script>
+
+    <h2>没有參數也没有傳回值</h2>
+    <script>
+        function sayHello() {
+            document.write("Hello, world~<br>");
+            return;
+        }
+        sayHello();
+    </script>
+
+
+    <h2>有參數, 没有傳回值</h2>
+    <script>
+        function sayHellowToSomeone(name) {
+            document.write("Hello," + name + "~<br>");
+        }
+        sayHellowToSomeone("FQFQ");
+    </script>
+
+
+    <h2>有參數, 有傳回值</h2>
+    <script>
+        function sum(a, b, c) {//區域變數, a:10, b:20
+            let total = 0;//區域變數, total:0
+            total = a + b;
+            return total;
+        }
+        //return後區域變數的值還原
+        document.write(`10+20=`, sum(10, 20), "<br>")
+    </script>
+
+
+    <h2>arguments</h2>
+    <!-- /*https://ithelp.ithome.com.tw/articles/10204008*/ -->
+    <script>
+        function sum(a, b) {
+            //argument:{10,20}, arguments[0]:10, arguments[1]:2,arguments.length:2
+            //argument:{10,20,30}, arguments[0]:10, arguments[1]:2,arguments[3]:30,arguments.length:2
+            var total = 0;
+            //改寫下段程式
+            for (let i = 0; i < arguments.length; i++) {
+                total += arguments[i];
+            }
+            total = a + b;
+
+            return total;
+        }
+
+        document.write("10 + 20 =", sum(10, 20), "<br>");
+        document.write("10 + 20 + 30 =", sum(10, 20, 30), "<br>");
+    </script>
+
+    <h2>避免和全域方法同名</h2>
+    <script>
+        function alert(message) {
+            document.write(message, "<br>")
+        }
+        window.alert("test...........1");
+        alert("test...........2");		
+    </script>
+
+    <h2>short circuit</h2>
+    <!-- https://ithelp.ithome.com.tw/articles/10243261 -->
+    <script>
+        var a = 10 > 5 || 10 < 5; //true
+        var b = 10 > 5 && 10 < 5; //F	
+        var c = 10 || 0; //10
+        var d = -0 || 5; //5
+        var e = 10 && 6; //6
+        var f = -0 && 5; //0
+        document.write("a : ", a, "<br>");
+        document.write("b : ", b, "<br>");
+        document.write("c : ", c, "<br>");
+        document.write("d : ", d, "<br>");
+        document.write("e : ", e, "<br>");
+        document.write("f : ", f, "<br>");
+    </script>
+
+
+    <h2>參數給預設值</h2>
+    <script>
+        function showMsg(message = "Hello~") {
+            document.write(message, "<br>");
+        }
+
+        showMsg("禱告~");
+        showMsg();
+
+
+    </script>
+    <h2>參數給預設值------ES6之前----1</h2>
+    <script>
+        function showMsg(message) {
+            message = message || "Hello~";
+            document.write(message, "<br>");
+        }
+
+        showMsg("禱告~");
+        showMsg();
+        showMsg(0);
+
+
+    </script>
+    <h2>參數給預設值------ES6之前----2</h2>
+    <script>
+        function showMsg(message) {
+            message = message = undefined ? "Hello~" : message;
+            document.write(message, "<br>");
+        }
+
+        showMsg("禱告~");
+        showMsg();
+        showMsg(0);
+    </script>
+
+
+    <h2>rest parameter</h2>
+    <!-- https://ithelp.ithome.com.tw/articles/10301552 -->
+    <script>
+        function sumMany(...arr) {
+            let sum = 0;
+            //arguments.push(1000);arguments,不是陣列，不可以使用陣列物件方法。
+            //arr.push(1000); //rest parameters,是陣列，可以使用陣列物件方法。
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum;
+        }
+
+
+        document.write("sumMany(11,22,33) : ", sumMany(11, 22, 33), "<br>");
+        document.write("sumMany(10,20,30,40,50) : ", sumMany(10, 20, 30, 40, 50), "<br>");
+    </script>
+
+
+    <h2>全域或區域</h2>
+    <script>
+        //請註解變數是全域或區域?????	
+        var a;
+        a = 10;
+
+        var b = 20;
+
+        c = 30;
+
+        function test(m) {
+            let d = 40;
+
+            d = 400;
+            a = 100;
+            e = 50;
+        }
+
+        test(33);//------
+
+        document.write("a : ", a, "<br>"); //100
+        document.write("b : ", b, "<br>"); //20
+        document.write("c : ", c, "<br>"); //30
+        document.write("d : ", d, "<br>"); //error
+        document.write("e : ", e, "<br>"); //?????
+    </script>
+
+
+    <h2>區域, 全域危險範例</h2>
+    <script>
+        let total = 10000; //---上個月的淨總額total:10000
+        let i = 200; //---要跑的次數 i:200
+
+        document.write("25 + 10 = ", sum(25, 10), "<br>");	//?????
+        document.write("total : ", total, "<br>");	//?????
+        document.write("i : ", i, "<br>");	//?????
+    </script>
+
+
+    <h2>使用sort()</h2>
+    <script>
+        var arr = [40, 20, 50, 70, 30, 80, 7];
+        arr.sort();
+        document.write(arr, "<br>");	
+    </script>
+</body>
+
+</html>
