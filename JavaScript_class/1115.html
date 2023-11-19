@@ -358,6 +358,28 @@
             document.write("<tr>");
         }
         document.write("</table>")
+
+
+    </script>
+    <h2>巢狀迴圈中for...while</h2>
+    <script>
+         var arr = [[1, 2, 3, 4], [11, 12, 13, 14], [21, 22, 23, 24]];
+         var str = ""
+        str += "<table border='1' cellspacing='0'>";
+
+        for (var i = 0; i < arr.length; i++) {
+            str += "<tr>";
+            let j= 0;
+            let length = arr[i].length;
+            while(j<length){
+                //j<4
+                str+=`<td>${arr[i][j]}</td>`;
+                j++;
+            }
+            str +="</tr>";
+        }
+        str +="</table>";
+        document.write(str);
     </script>
 </body>
 
