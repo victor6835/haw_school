@@ -24,6 +24,85 @@
         document.write("</table>")
     </script>
 
+    <h1>作業15大樂透數字產生器</h1>
+
+    <script>
+        function generateLotteryNumbers() {
+            let lotteryNumbers = [];
+
+            while (lotteryNumbers.length < 6) {
+                let randomNumber = Math.floor(Math.random() * 49) + 1;
+
+                // 確保數字不重覆
+                if (!lotteryNumbers.includes(randomNumber)) {
+                    lotteryNumbers.push(randomNumber);
+                }
+            }
+
+            return lotteryNumbers;
+        }
+
+        // 產生並印出大樂透數字
+        let result = generateLotteryNumbers();
+        document.write(`<p>大樂透數字: ${result.join(', ')}</p>`);
+    </script>
+
+    <h1>作業14隨機數統計</h1>
+
+    <script>
+        // 產生10個介於1~100之間的隨機數
+        let numbers = [];
+        for (let i = 0; i < 10; i++) {
+            numbers.push(Math.floor(Math.random() * 10) + 1);
+        }
+
+        // 印出10個數字
+        document.write(`<p>隨機數陣列: ${numbers.join(" ")}</p>`);
+
+        // 計算總和
+        let sum = numbers.reduce((acc, num) => acc + num, 0);
+        document.write(`<p>總和: ${sum}</p>`);
+
+        // 計算最小值
+        let min = Math.min(...numbers);
+        document.write(`<p>最小值: ${min}</p>`);
+
+        // 計算最大值
+        let max = Math.max(...numbers);
+        document.write(`<p>最大值: ${max}</p>`);
+    </script>
+
+    <h1>作業13數字與累加結果</h1>
+
+    <script>
+        // 數字和累加結果
+        for (let i = 1; i <= 10; i++) {
+            let sum = 0;
+            let sumString = '';
+            for (let j = 1; j <= i; j++) {
+                sum += j;
+                sumString += (j === i) ? `${j}=${sum}` : `${j}+`;
+            }
+            // 在網頁上顯示數字和累加結果
+            document.write(`${sumString}<br>`);
+        }
+    </script>
+
+    <h1>作業12數字圖案</h1>
+
+    <script>
+        // 數字圖案
+        for (let i = 1; i <= 6; i++) {
+            let numbers = '';
+            for (let j = 1; j <= i; j++) {
+                numbers += j;
+            }
+            // 在網頁上顯示數字圖案
+            document.write(numbers + '<br>');
+        }
+    </script>
+
+
 
 </body>
 
