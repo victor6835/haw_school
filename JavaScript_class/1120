@@ -2,3 +2,16 @@ DB server
 Web server
 FTP serv
 127.0.0.1 / localhost
+找到頁面上的元素物件參考
+取得或改變元素物件內容
+取得或改變元素物件外觀(物件.style.css屬性)
+
+事件機制
+    甚麼事?
+    發生在誰身上?
+    要做甚麼?
+
+event_handler.html
+sameAsBuyer
+setFavorite
+event_mouse.html(event物件, event.target)
