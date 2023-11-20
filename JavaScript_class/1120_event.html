@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>event handler</title>
+</head>
+
+<body>
+
+<input type="button" name="btn" value="10+20=?[0]">&nbsp;&nbsp;
+<input type="button" name="btn" value="10+20=?[1]">&nbsp;&nbsp;
+<input type="button" name="btn" value="10+20=?[2]">&nbsp;&nbsp;  
+
+<script>
+    function showAns(){
+        var a=10;
+        var b=20;
+        window.alert(a+b);
+    }
+    function noAns(){
+        alert("不告訴你");
+    }
+    function showSmile(){
+        window.alert(">____<");
+        btns[2].removeEventListener("click", showsmile, false);
+    }
+
+    var btns = document.getElementsByName("btn");
+
+    btns[1].onclick = showAns;/*二代*/
+    btns[1].onclick = noAns;/*二代*/
+
+    btns[2].addEventListener("click", showAns, false);/*三代*/
+    btns[2].addEventListener("click", showSmile, false);/*三代*/
+
+</script> 
+</body>
+</html>
