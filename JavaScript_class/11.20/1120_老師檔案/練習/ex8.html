@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><tr><td></td><td></td></tr>
+    <script>
+        let sum = 0;
+        document.write("<table border='1' cellspacing='0'>");
+        document.write("<tr><th>次數</th><th>彩球金額</th></tr>");
+        for(let i=1; i<=10; i++) {
+            let ball = Math.floor(Math.random() * 11) * 100;
+            document.write(`<tr><td>${i}</td><td>${ball}</td></tr>`)
+            sum += ball;
+        }
+        document.write(`<tr><td>彩金總額</td><td>${sum}</td></tr>`);
+        document.write("</table>");
+    </script>
+</body>
+</html>

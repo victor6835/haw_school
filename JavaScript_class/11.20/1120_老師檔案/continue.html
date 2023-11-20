@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keyword" content="HTML,CSS,Javascript">
+<title>Examples</title>
+<style>
+	h2 {
+		color:deeppink;
+	}
+</style>
+</head>
+
+<body>
+<h2>break : 1 加到 多少會大於1000</h2>
+<script>
+var sum = 0;	
+for(let i = 1; i <=1000; i++) {
+	sum += i;
+	if (sum > 1000) {
+		document.write(`1 加到 ${i} 等於 ${sum}大於1000<br>`);
+		break;
+	}
+}
+</script> 
+
+<h2>continue 印出3的倍數</h2> 
+<script>
+var total = 0;
+
+for(var i=1; i<=50; i++){
+	if (i % 3 !== 0) {
+		continue;
+	}
+	document.write( i, "<br>");
+	total = total + i;
+}
+document.write( "總和 : ", total, "<br>");
+</script> 
+</body>
+</html>

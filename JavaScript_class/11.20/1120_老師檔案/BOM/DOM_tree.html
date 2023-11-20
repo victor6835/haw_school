@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<style>
+	#dotsPanel{
+		position: relative;
+		margin: auto;
+		border: 2px dotted deeppink;
+	}
+
+	span{
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		text-align: center;
+		border:1px dotted deeppink;
+		border-radius: 50%;
+		background-color: #CCC;
+		margin:10px;
+	}
+</style>
+</head>
+<body>
+	<input type="button" value="childNodes" id="btn_childNodes">
+	<input type="button" value="children" id="btn_children">
+	<input type="button" value="add_element" id="btn_add_element">
+	<input type="button" value="insertBefore" id="btn_insertBefore">
+	<input type="button" value="removeFirst" id="btn_removeFirst">
+	<hr>
+	<input type="button" value="dotsPanel_parent" id="btn_dotsPanel_parent">
+	<input type="button" value="dotsPanel_previous" id="btn_dotsPanel_previous">
+	<input type="button" value="dotsPanel_next" id="btn_dotsPanel_next">
+
+	<div id="content">
+		<div>我是dotsPanel的前一個元素兄弟節點</div>	
+
+		<div id="dotsPanel">
+			<span>0 </span>
+			<span>1 </span>
+			<span>2 </span>
+			<span>3 </span>
+			<span>4 </span>
+			<span>5</span>
+			<span>6 </span>
+		</div>
+
+		<div>我是dotsPanel的後一個元素兄弟節點</div>	
+	</div>
+
+	<script>
+	
+	let btn_childNodes = document.getElementById("btn_childNodes");
+	let btn_children = document.getElementById("btn_children");
+	let btn_add_element = document.getElementById("btn_add_element");
+	let btn_removeFirst = document.getElementById("btn_removeFirst");
+	let btn_insertBefore = document.getElementById("btn_insertBefore");
+	let btn_dotsPanel_parent = document.getElementById("btn_dotsPanel_parent");
+	let btn_dotsPanel_previous = document.getElementById("btn_dotsPanel_previous");
+	let btn_dotsPanel_next = document.getElementById("btn_dotsPanel_next");
+	/**/
+
+	//--------------------------------------------------------	
+	let dotsPanel = document.getElementById("dotsPanel");
+	let dots = dotsPanel.children;
+
+	btn_childNodes.onclick = function(){
+		//顯示 dotsPanel內 的 子節點 有多少個
+		//含文字, 元素, 註解, 空白.....等節點
+		//??????
+	}
+
+	btn_children.onclick = function(){
+		//顯示 dotsPanel內 的 元素節點 有多少個
+		//只含元素節點
+		//??????
+	}
+
+	//------------------------------------------------------
+	btn_add_element.onclick = function(){
+		//創建span元素節點
+		//??????
+
+		//元素節點內給一個值, 放目前dotsPanel元素節點內的元素個數
+		//??????
+
+		//將此元素節點放在 dotsPanel 之下的最後面
+		//??????		
+	};
+
+
+	btn_insertBefore.onclick = function(){
+		//創建span元素節點
+		//??????
+
+		//元素節點內給一個值, 放目前dotsPanel元素節點內的元素個數
+		//??????
+
+		//將此節點放在dotsPanel 之下, 第0個節點之前
+		//??????
+	};
+
+
+	btn_removeFirst.onclick = function(){
+		//刪除dotsPanel索引值為0的元素
+		//??????
+	};
+	
+	//------------------------------------------------------
+	btn_dotsPanel_parent.onclick = function(){
+		//顯示dotsPanel父節點的id
+		//??????	
+	};	
+	
+	
+	btn_dotsPanel_previous.onclick = function(){
+		//顯示dotsPanel前一個元素節點的內容
+		//??????
+	};
+	//previousElementSibling(前一個元素兄弟節點), previousSibling(前一個兄弟節點)
+
+
+	btn_dotsPanel_next.onclick = function(){
+		//顯示dotsPanel後一個元素節點的內容
+		//??????
+	};
+	//nextElementSibling(後一個元素兄弟節點), nextSibling(後一個兄弟節點)
+
+	</script> 
+</body>
+</html>

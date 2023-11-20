@@ -1,0 +1,48 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<style>
+h1 {color:deepPink}
+span {color:blue}
+</style>
+</head>
+
+<body>
+
+<h1 style="color:deepPink">location範例</h1>
+<p>
+
+
+<script>
+document.write( "<span>hostname: </span>", location.hostname ,"<br>");
+document.write( "<span>host: </span>", location.host ,"<br>");
+document.write( "<span>port: </span>", location.port ,"<br>");
+document.write( "<span>href: </span>", location.href ,"<br>");
+document.write( "<span>pathname: </span>", location.pathname ,"<br>");
+document.write( "<span>Query string :</span>", location.search ,"<br>");
+</script>
+
+
+<form method="get">
+
+<P>
+<input type="button" value="新聞 href"  
+       onclick="location.href='http://www.kimo.com.tw';"/>
+ 
+<P>
+<input type="button" value="新聞 replace()"  
+       onclick="location.replace('http://www.kimo.com.tw');"/>
+
+<P>
+<input type="button" value="新聞 window.open()"  
+       onclick="window.open('http://www.kimo.com.tw');"/>       
+
+<P>
+<input type="button" value="print"  
+       onclick="window.print();"/>  
+
+</body>
+</html>

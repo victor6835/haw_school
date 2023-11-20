@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style>
+	#msgPanel{
+		width:800px;
+		height:500px;
+		background-color: pink;
+	}
+</style>
+</head>
+<body>
+  <button type="button" id="btnShowMsg">get info</button>
+  <button type="button" id="btnAddNameClass">add button name  class</button>
+  <div id="msgPanel"></div>
+
+  <input type="button" value="buttons" class="btn" name="btn">
+  <input type="button" value="buttons" class="btn" name="btn">
+  <input type="button" value="buttons" class="btn" name="btn"> 
+  <script>
+    //NodeList有提供forEach方法
+    //HTMLCollection則是沒有, 可使用Array.from();
+  	let names = document.getElementsByName("btn"); //[object NodeList]
+  	let tags = document.getElementsByTagName("input");//[object HTMLCollection]
+  	let classes = document.getElementsByClassName("btn");//[object HTMLCollection]
+  	let selectors = document.querySelectorAll("input");  //static [object NodeList]
+    
+  	function showMsg(){
+  		let html = "";
+  		html += `getElementsByName : ${names}, 長度 : ${names.length}<br>`;
+  		html += `getElementsByTagName : ${tags}, 長度 : ${tags.length}<br>`;
+  		html += `getElementsByClassName : ${classes}, 長度 : ${classes.length}<br>`;
+  		html += `querySelectorAll : ${selectors}, 長度 : ${selectors.length}<br>`;
+  		document.getElementById("msgPanel").innerHTML = html;
+  	}
+
+  	document.getElementById("btnShowMsg").onclick = showMsg;
+
+  	document.getElementById("btnAddNameClass").onclick = function(){
+  		let newBtn = document.createElement("input"); //<input>
+  		newBtn.type="button";//<input type="button">
+  		newBtn.name="btn";//<input type="button" name="btn">
+  		newBtn.className="btn";//<input type="button" name="btn" class="btn">
+      newBtn.value="buttons";
+  		document.body.appendChild(newBtn);
+  	}
+
+  	window.onload = function(){
+  		showMsg();
+  	}
+  </script>
+</body>
+</html>

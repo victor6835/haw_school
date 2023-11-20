@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>商品呈列範例</title>
+<style>
+
+img { width: 100px;}		 
+
+
+#funcName { color:deepPink}
+
+div.product {
+	width :250px;
+  height:300px;
+	background-color:#F0E0FE;
+	border-style:dotted;
+	border-width:1px;
+	border-color:deepPink;
+	float:left;
+	margin-right:5px;
+	}
+
+div ol { 
+	list-style-type:none;
+	padding-left:6px;
+  }
+
+div ol li span{ color:blue;}
+
+div input{
+	text-align: center;
+}
+</style>
+<script src="cakeCss.js"></script>
+</head>
+
+<body>
+<div>首頁 >> 商品專區 >> <span id="funcName">優惠商品</span></div>
+<ol>
+  <li>選購商品</li>
+  <li>填寫收件資料</li>
+  <li>選擇付款方式</li>
+  <li>確認訂單</li>
+</ol>
+  
+<div class="product">
+	<ol>
+		<li><img src="images/M1_001.gif" /></li>
+		<li>商品名稱 : <span>孔雀香草蛋糕</span></li> 
+		<li>商品單價 : <span>500 </span></li> 
+		<li>商品尺寸 : <span>8寸 </span></li> 
+	</ol>
+	<br>
+	<div style="text-align:center">
+		<input type="button" class="btnMinus" value="-" id="btnMinus0">
+		<input type="text" class="qty" size="4" value="0" id="qty0">
+		<input type="button" class="btnPlus" value="+" id="btnPlus0">	
+	</div>
+</div>
+
+<div class="product">
+	<ol>
+		<li><img src="images/M1_002.gif" /></li>
+		<li>商品名稱 : <span>水果蛋糕 </span></li> 
+		<li>商品單價 : <span>550</span></li> 
+		<li>商品尺寸 : <span>8寸 </span></li> 
+	</ol>
+	<br>
+	<div style="text-align:center">
+		<input type="button" class="btnMinus" value="-">
+		<input type="text" class="qty" size="4" value="0">
+		<input type="button" class="btnPlus" value="+">	
+	</div>
+</div>
+
+<div class="product">
+	<ol>
+		<li><img src="images/M1_003.gif" /></li>
+		<li>商品名稱 : <span>水果花蛋糕 </span></li> 
+		<li>商品單價 : <span>550</span></li> 
+		<li>商品尺寸 : <span>8寸 </span></li> 
+	</ol>
+	<br>
+	<div style="text-align:center">
+		<input type="button" class="btnMinus" value="-">
+		<input type="text" class="qty" size="4" value="0">
+		<input type="button" class="btnPlus" value="+">	
+	</div>
+</div>
+
+<div class="product">
+	<ol>
+		<li><img src="images/M2_001.gif" /></li>
+		<li>商品名稱 : <span>黑森林蛋糕 </span></li> 
+		<li>商品單價 : <span>600 </span></li> 
+		<li>商品尺寸 : <span>8寸 </span></li> 
+	</ol>
+	<br>
+	<div style="text-align:center">
+		<input type="button" class="btnMinus" value="-">
+		<input type="text" class="qty" size="4" value="0">
+		<input type="button" class="btnPlus" value="+">	
+	</div>
+</div>
+
+<div class="product">
+	<ol>
+		<li><img src="images/M1_005.gif" /></li>
+		<li>商品名稱 : <span>水果派對蛋糕 </span></li> 
+		<li>商品單價 : <span>600 </span></li> 
+		<li>商品尺寸 : <span>8寸 </span></li> 
+	</ol>
+	<br>
+	<div style="text-align:center">
+		<input type="button" class="btnMinus" value="-">
+		<input type="text" class="qty" size="4" value="0">
+		<input type="button" class="btnPlus" value="+">	
+	</div>
+</div>
+
+<div class="product">
+	<ol>
+		<li><img src="images/M2_002.gif" /></li>
+		<li>商品名稱 : <span>小太陽蛋糕 </span></li> 
+		<li>商品單價 : <span>600 </span></li> 
+		<li>商品尺寸 : <span>8寸 </span></li> 
+	</ol>
+	<br>
+	<div style="text-align:center">
+		<input type="button" class="btnMinus" value="-">
+		<input type="text" class="qty" size="4" value="0">
+		<input type="button" class="btnPlus" value="+">	
+	</div>
+</div>
+
+<script>
+function init(){
+	
+}	
+window.addEventListener("load", init, false);		
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>event handler</title>
+
+</head>
+
+<body>
+<div id="showPanel"></div>
+<input type="button" name="btn" value="10+20=?[0]" onclick="showAns()">&nbsp;&nbsp;
+<input type="button" name="btn" value="10+20=?[1]">&nbsp;&nbsp;
+<input type="button" name="btn" value="10+20=?[2]">&nbsp;&nbsp;  
+<input type="button" value="test" onclick="document.getElementById('showPanel').innerText='Hello~';">
+
+<script>
+    function showAns() {
+        var a=10;
+        var b=20;
+        window.alert(a+b);
+    }
+    
+    function noAns() {
+        alert("不告訢你!!")
+    }
+    
+    function showSmile() {
+        count++;
+        window.alert("^____________^");
+        if( count === 3) {
+            btns[2].removeEventListener("click", showSmile, false); 
+        }          
+    }
+    var btns;
+    var count = 0;
+    btns = document.getElementsByName("btn"); 
+
+    btns[1].onclick = showAns;
+    btns[1].onclick = noAns;
+
+    btns[2].addEventListener("click", showAns, false);
+    btns[2].addEventListener("click", showSmile, false); 
+    </script>
+</body>
+</html>
