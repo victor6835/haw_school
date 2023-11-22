@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keyword" content="HTML,CSS,Javascript">
+<title>Examples</title>
+<style>
+	h2 {
+		color:deeppink;
+	}
+</style>
+</head>
+
+<body>
+
+<h2>eval()</h2>
+<script>
+var str = "var a=10; var b=20";
+eval(str);
+document.write( "a : ", a, "<br>");
+</script>
+
+
+<h2>isNaN()</h2> 
+<script>
+document.write( "isNaN('32000') : ", isNaN('32000'), "<br>"); //false
+document.write( "isNaN('*#@') : ", isNaN('*#@'), "<br>"); //true
+</script>
+<!-- -->
+</body>
+</html>

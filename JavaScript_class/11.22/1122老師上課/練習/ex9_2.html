@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let sum = 0;
+        let ball;
+        document.write("<table border='1' cellspacing='0'>");
+        document.write("<tr><th>彩球金額</th></tr>");
+
+        do {
+            ball = Math.floor( Math.random() * 11 ) * 100;
+            document.write(`<tr><td>${ball}</td></tr>`)  ;
+            sum += ball;           
+        } while (ball !==0);   
+          
+        document.write(`<tr><td>彩金總額:${sum}</td></tr>`);
+        document.write("</table>");
+    </script>
+</body>
+</html>

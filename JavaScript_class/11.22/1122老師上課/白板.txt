@@ -1,0 +1,61 @@
+2550360 5226
+
+var, let
+------選擇
+if()
+
+switch(){
+    case 1 :
+
+    case 2
+}
+
+------迴圈
+for( ;  ;  ) {
+
+}
+while() {
+
+}
+do {
+
+}while ();
+
+nested loop
+
+------陣列
+
+------函式
+
+------陣列搭配回呼函式
+sort(), forEach(), map(), filter(), 
+
+-------
+document.html
+找到頁面上的元素物件參考
+
+取得或改變元素物件的內容
+
+取得或改變元素物件的外觀(物件.style.css屬性)
+
+事件機制
+    什麼事發生了
+    發生在誰身上
+    要做什麼
+evnet_handler.html
+evnet_handler_onload.html
+
+sameAsBuyer.html
+setFavorite.html
+
+event_mouse.html(介紹event物件, event.target)
+
+key event
+
+點小圖show大圖, getElementsByClassName(), querySelectorAll()
+
+setInterval();clearInterval();
+
+setTimeout();clearTimeout();
+
+bubble, capture

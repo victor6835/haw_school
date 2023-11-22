@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style>
+	#outer {
+		background-color:lightyellow;
+		width:600px;
+	}
+	#inner {
+		background-color:lightblue;
+		width:600px;
+	}
+
+	#outer2 {
+		background-color:pink;
+		width:600px;
+	}
+
+	#inner2 {
+		background-color:lightgray;
+		width:600px;
+	}
+</style>
+</head>
+<body>
+
+<div id="outer" onmouseover="console.log('over outer');" onmouseout="console.log('out outer');">
+	<p>outer 01</p>
+	<p>outer 02</p>
+	<div id="inner" onmouseover="console.log('over inner');" onmouseout="console.log('out inner');">
+		<p>inner 01</p>
+		<p>inner 02</p>
+	</div>
+	<p>outer 01</p>
+	<p>outer 02</p>
+</div>  
+<!------------------------------------------------------------
+mouseenter, mouseleave没有bubble現象
+mouseover, mouseout有bubble現象
+-->
+
+<div id="outer2" onmouseenter="console.log('enter outer2');"  onmouseleave="console.log('leave outer2');">
+	<p>outer 01</p>
+	<p>outer 02</p>
+	<div id="inner2" onmouseenter="console.log('enter inner2');" onmouseleave="console.log('leave inner2');">
+	<p>inner 01</p>
+	<p>inner 02</p>
+	</div>
+	<p>outer 01</p>
+	<p>outer 02</p>
+</div>  
+</body>
+</html>

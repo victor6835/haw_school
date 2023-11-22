@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style>
+#divNum {
+         margin:auto;
+         color:deepPink;
+         width:50%;
+         height:20%;
+         background-color:#333;
+         font-size:50px;
+         text-align:center;}
+</style>
+</head>
+<body>
+
+<center><input type="button" id="btn" value="倒數計時"></center>
+<div id="divNum">5</div>    
+
+<script>
+let num = 5; 
+let timerId;
+function countDown() {
+    num--;
+    if(num ===  0) {
+        num = "Happy new year~";
+        clearInterval(timerId);
+    }
+    document.getElementById("divNum").innerText = num;
+}
+
+function run() {
+    timerId = setInterval(countDown, 1000);//countDown是callback函式
+}
+
+function init(){
+    document.getElementById("btn").onclick = run;
+}
+
+window.addEventListener("load", init, false);
+</script>
+</body>
+</html>

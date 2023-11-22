@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style>
+    h2 {
+        color:deeppink;
+    }
+</style>
+</head>
+<body>
+
+<h2>string</h2>
+<script>
+var name;
+name = 'Ann';
+//------------------
+var age = 18;
+//------------------
+var name, age; //var 可以重覆宣告
+name = "Ann";
+age = 18;
+//------------------
+var name = "Ann", age = 18.5;
+//------------------
+//印出: 姓名:Ann, 年齡:18
+//??????
+document.write("姓名:", name, ", 年齡:", age, '<br>');
+</script>
+
+
+<h2>number</h2>
+<script>
+var age = 18;
+document.write( age, "<br>");
+
+document.write("17 : ", 17, "<br>"); //十進位
+
+document.write("017 : ", 017, "<br>");//也會被解譯為八進位
+document.write("019 : ", 019, "<br>");//自動升級為十進位
+document.write("0o17 : ", 0o17,"<br>");//八進位,15
+//document.write("0o19 : ", 0o19,"<br>");//八進位的有效數字為0..7, 此列會error
+
+document.write("0x17 : ", 0x17,"<br>");//十六進位, 23
+
+document.write("0b1000: ", 0b1000, "<br>");//二進位
+document.write("0b1010: ", 0b1010, "<br>");
+</script>
+
+<h2>boolean布林值</h2> 
+<script>
+document.write("true: ", true, "<br>");
+document.write("false: ", false, "<br>");
+</script>
+
+<h2>undefined, null</h2>
+
+<script>
+document.write("undefined: ", undefined, "<br>");
+document.write("null: ", null,"<br>");
+</script>
+<!--  -->
+
+
+
+
+
+</body>
+</html>

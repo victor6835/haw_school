@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>document</title>
+
+</head>
+
+<body>
+<div>首頁 >> <span id="curPos">=====</span></div>
+<br><br>
+
+搜尋<input type="text" name="searchData" value="" placeholder="" size="" ><input type="button" value="查詢"><br>
+搜尋<input type="text" name="searchData"  ><input type="button" value="查詢"><br>
+
+<script type="text/javascript">
+    
+//-----------------------------案例一, 透過id來找到元素    
+//找到頁面中的元素 curPos
+var curPos = document.getElementById("curPos");
+
+//改變curPos元素的內容
+curPos.innerText = "<b>會員專區</b>";
+//curPos.innerHTML = "<b>會員專區</b>";
+//改變curPos元素的外觀
+curPos.style.Color = "deeppink";
+
+//-----------------------------案例二, 透過name來找到元素   
+//找到頁面中的元素 searchData
+var objs = document.getElementsByName("searchData");
+console.log("objs.length : ",  objs.length);
+
+//改變searchData元素的內容
+objs[0].value="Guest";
+objs[1].placeholder="請輸入關鍵字";
+objs[0].size = 6;
+//改變searchData元素的外觀
+objs[0].style.borderStyle = "dotted";
+objs[0].style.backgroundColor = "lightYellow";
+
+//-----------------------------案例三, 透過tag name來找到元素 
+var divs = document.getElementsByTagName("div");
+divs[0].style.display="none"; 
+
+var divFirst = document.getElementsByTagName("div")[0];
+divFirst.style.display = "block";
+
+//-----------------------------案例四, 透過tag name來找到input元素們
+var inputs = document.getElementsByTagName("input");
+//無法執行inputs.style.borderRadius = "10px", 因為個別元素才有style屬性
+for(let i=0; i<inputs.length; i++) {
+    inputs[i].style.borderRadius = "10px";  
+}
+
+</script>    
+</body>
+</html>

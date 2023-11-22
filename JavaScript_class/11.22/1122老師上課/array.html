@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keyword" content="HTML,CSS,Javascript">
+<title>Examples</title>
+<style>
+	h2 {
+		color:deeppink;
+	}
+</style>
+</head>
+
+<body>
+<h2>建立陣列</h2>
+<script>
+//建立陣列, 使用 new 
+var arr = new Array(11, 22, 33);
+//使用陣列變數 [索引]來取得陣列中的資料
+document.write("arr[0] : ", arr[0], "<br>");
+document.write("arr[1] : ", arr[1], "<br>");
+document.write("arr[2] : ", arr[2], "<hr>");
+//利用迴圈技巧來簡化程式
+for(let i=0; i<3; i++) {
+	document.write( arr[i], "<br>");
+}
+</script>
+
+
+<h2>------------陣列的length屬性</h2>
+<script>
+var arr = new Array(11, 22, 33, 44);
+
+//使用for搭配陣列的length屬性
+//註: 可用的資料之索引值比長度少1
+//arr.length每次會重新計算長度
+for(let i=0; i<arr.length; i++) {
+	document.write( arr[i], "<br>");
+}
+</script>
+
+
+<h2>------------陣列的length屬性--------2</h2>
+<script>
+var arr = new Array(11, 22, 33);
+
+var length = arr.length; //先把arr.length值抄出來
+for (let i = 0; i < length; i++) { 
+	document.write("arr[i] : ", arr[i], "<br>");
+}
+</script>
+
+
+<h2>其內的資料可以是不同的型別</h2>
+<script>
+var arr = new Array(11, true, "Hello, world!");
+for(var i = 0; i < arr.length; i++){ 
+	document.write( "arr[i] : ", arr[i], "<br>"); 
+}
+</script>
+
+
+<h2>------------陣列在JavaScript中可以動態的配置</h2>
+<script>
+var arr = new Array(11, 22, 33);
+//超額使用, 將100放入索引值6的位置
+arr[6] = 100;
+
+//輸出資料, 使用for句型
+var length = arr.length; 
+for (let i = 0; i < length; i++) {
+	document.write("arr[i] : ", arr[i], "<br>");
+}
+</script>
+
+  
+<h2>------------使用foreach句型: for( i in arr) </h2>
+<script>
+var arr = new Array(11, 22, 33);
+//超額使用, 將100放入索引值6的位置
+arr[6] = 100;
+
+//輸出資料, 使用foreach句型, 變數i取到的是鍵值, 以陣列而言就是索引值
+for(let i in arr) {
+	//document.write(i, "<br>");
+	//document.write(arr[i], "<br>");
+	//arr[i] += 100;
+	document.write(`${i} : ${arr[i]}<br>`)
+}
+</script>
+
+
+<h2>------------使用foreach句型: for( data of arr) </h2>
+<script>
+var arr = new Array(11, 22, 33);
+//超額使用, 將100放入索引值6的位置
+arr[6] = 100;
+
+//輸出資料, 使用foreach句型, 變數data:取到的是資料本身
+for(let data of arr) {
+	document.write(data, "<br>");
+}
+</script>
+
+
+<h2>將陣列中的資料串接成字串------自己做</h2>
+<script>
+var arr = new Array(11, 22, 33);
+var arr = [11, 22, 33];
+var str = ""; 
+//"" + 11 + "," ===> "11," + 22 + "," => "11, 22," =>"11,22" + 33 + "," => "11, 22,33,"
+
+for(var i=0; i<arr.length-1; i++) { //i:2
+	str += arr[i] + ",";
+}
+str += arr[i];
+//印出字串
+document.write( str, "<br>");
+</script>
+
+
+<h2>將陣列中的資料串接成字串------使用陣列的toString()</h2>
+<script>
+var arr = new Array(11, 22, 33);
+var str = arr.toString();
+
+document.write( str, "<br>");
+</script>
+
+
+<h2>將陣列中的資料串接成字串------使用自動呼叫的toString()</h2>
+<script>
+var arr = [11, 22, 33];
+
+document.write( arr, "<br>");//自動呼叫arr.toString()
+</script>
+
+
+<h2>將新的資料放到陣列的最後面------自己做</h2>
+<script>
+var arr = new Array(11, 22, 33);
+
+arr[arr.length] = 100;
+arr[arr.length] = 200;
+
+document.write(arr, "<br>");
+</script>
+
+
+<h2>將新的資料放到陣列的最後面------使用陣列的push(data)</h2>
+<script>
+var arr = new Array(11, 22, 33);
+
+arr.push(100);
+var length = arr.push(200);
+
+//印出陣列
+document.write( arr, "<br>"); //?????
+document.write( "長度 : ", length, "<br>"); 
+</script>
+
+
+<h2>將新的資料(100)insert到陣列中的特定位置(3)------自己做</h2>
+<script>
+var arr = new Array(11, 22, 33, 44, 55, 66, 77);
+
+for(var i=arr.length-1; i>=3; i--) { 
+	arr[i+1] = arr[i]; 
+}
+arr[3] = 100;
+//印出陣列
+document.write(arr, "<br>"); 
+</script>
+
+
+
+<h2>將陣列中的資料串接成字串------arr.join([separator])</h2>
+<script>
+//如果未傳入此separator參數，陣列中的元素將預設用英文逗號（「,」）隔開
+//回傳一個合併所有陣列元素的字串。
+//若arr.length 為 0，將回傳空字串。
+
+var arr = new Array(11, 22, 33);
+var str = arr.join("@@");
+
+//印出字串
+document.write( str, "<br>");
+</script>
+
+
+<h2>cancat(value1, value2[, ...[, valueN]]])</h2>
+<script>
+//用來合併成一個新的陣列。
+//回傳一個新的陣列實體。
+var arr = new Array(11, 22, 33);
+var arr2 = new Array(55, 66, 77);
+
+var arr3 = arr2.concat(100, arr, 200); //55, 66, 77, 100, 11, 22, 33, 200
+
+document.write( arr, "<br>");
+document.write( arr2, "<br>");
+//concat()後的陣列
+document.write( arr3, "<br>");
+</script>
+
+
+<h2>pop():移除並回傳陣列的最後一個元素。此方法會改變陣列的長度。</h2>
+<script>
+//回傳值為自陣列中移除的元素；若陣列為空，則為 undefined。
+var arr = new Array(11, 22, 33);
+
+var data = arr.pop();
+
+document.write( "pop出", data, "<br>"); //?????
+document.write( arr, "<br>"); /* */
+</script>
+
+
+<h2>unshift(data):添加一個或多個元素至陣列的開頭，並且回傳陣列的新長度。</h2>
+<script>
+//會改變原陣列的內容
+//回傳值:呼叫此方法之物件的新 length 屬性值。
+var arr = new Array(11, 22, 33);
+
+arr.unshift(1000);
+
+document.write( arr, "<br>");//陣列內容
+</script>
+
+
+<h2>slice(start, end)</h2>
+<script>
+//會回傳一個新陣列物件，為原陣列選擇之索引為 start 至 end（不含 end）的拷貝
+//原本的陣列不會被修改。
+//回傳值為被拷貝之元素的新陣列。
+
+var arr = new Array(11, 22, 33, 44, 55, 66, 77);
+//拷貝陣列中的資料
+var arr2 = arr.slice(2, 5); //44, 55
+
+document.write( arr, "<br>"); //11, 22, 33, 44, 55, 66, 77
+document.write( arr2, "<br>");
+</script>
+
+
+<h2>splice(start, n, data1, data2,....)----------------1.可刪除資料</h2>
+<script>
+//可以藉由刪除既有元素(start開始刪除掉n個)
+//或加入新元素(data1, data2, ...)來改變一個陣列的內容。
+//傳回一個陣列包含被刪除的元素。如果只有一個元素被刪除，依舊是回傳包含一個元素的陣列。 
+//倘若沒有元素被刪除，則會回傳空陣列。
+
+var arr = new Array(11, 22, 33, 44, 55, 66, 77, 88, 99);
+//取出資料(從索引值2開始取出5個)
+var arr2 = arr.splice(2, 5); //33, 44, 55, 66, 77
+
+document.write( arr, "<br>"); //11, 22, 88, 99
+document.write( arr2, "<br>");//33, 44, 55, 66, 77
+</script>
+
+
+<h2>splice(start, n, data1, data2,....)----------------2.可加入資料</h2>
+<script>
+var arr = new Array(11, 22, 33, 44, 55, 66, 77, 88, 99);
+//取出資料(從索引值2開始取出5個), 也加入新的資料(100,200,300)
+arr.splice(2, 5, 100, 200, 300)
+document.write( arr, "<br>"); //11, 22, 100, 200, 300, 88, 99
+document.write( arr2, "<br>");
+</script>
+
+
+<h2>使用splice()來模擬將資料(100)insert到陣列中的特定位置(3)------案例3</h2>
+<script>
+var arr = new Array(11, 22, 33, 44, 55, 66, 77);
+arr.splice(3, 0, 100); //11, 22, 33, 100, 44, 55, 66, 77
+document.write( arr, "<br>"); 
+</script>
+
+
+<h2>使用splice()將特定位置(3)的資料自陣列中移除------案例4</h2>
+<script>
+var arr = new Array(11, 22, 33, 44, 55, 66, 77);
+var arr2 = arr.splice(3, 1); //[44]
+document.write( arr, "<br>"); //11, 22, 33, 55, 66, 77
+document.write( arr2, "<br>"); 
+</script>
+
+
+<h2>reverse()</h2>
+<script>
+//反轉一個陣列
+//回傳值為反轉後的陣列。
+var arr = new Array(11, 22, 33);
+document.write( arr, "<br>");  //反轉前
+arr.reverse();
+document.write( arr, "<br>");  //反轉後
+</script>
+
+
+<h2>indexOf(searchElement[, fromIndex])</h2>
+<script>
+//回傳searchElement於陣列中第一個被找到之索引，若不存在於陣列中則回傳 -1。
+//fromIndex指陣列中搜尋的起始索引, 若没寫fromIndex, 預設從0開始往後找。
+
+var arr = new Array(11, 22, 33, 44, 55, 22, 77, 88, 33, 66);
+
+document.write( "arr.indexOf(33) :", arr.indexOf(33), "<br>"); //2
+document.write( "arr.indexOf(333) :", arr.indexOf(333), "<br>"); //-1
+document.write( "arr.indexOf(33, 5) :", arr.indexOf(33, 5), "<br>"); //8
+</script>
+
+
+
+<h2>陣列物件參考的操作</h2>
+<script>
+var arr = new Array(11, 22, 33);
+var arr2 = arr;
+
+document.write( arr, "<br>");//原陣列的內容 11, 22, 33
+arr2[2] = 300; //改變arr2陣列的內容
+document.write( arr, "<br>");//原陣列的內容	11, 22, 300
+</script>
+
+<!--
+
+ -->
+
+</body>
+</html>

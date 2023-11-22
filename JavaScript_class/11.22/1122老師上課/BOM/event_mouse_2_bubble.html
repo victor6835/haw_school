@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+
+</head>
+
+<body>
+<input type="button" id="btn" value="test">
+
+<table id="myTable" align="center" cellspacing="3" border="1">
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+</table> 
+
+<script>
+//註冊事件處理器
+function highlight(e){ //e會接收到瀏覽器送來的事件物件
+    let obj = e.target; //e.target指事件發生在哪一個元素
+
+    obj.style.backgroundColor = "pink";
+}   
+
+function normal(e){
+    let obj = e.target;
+    obj.style.backgroundColor = "white";
+}   
+
+//設定myTable的滑鼠移入、移出之事件處理器
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+console.log("e.target : ", e.target.tagName); //TD
+console.log("e.currentTarget : ", e.currentTarget.tagName); //TABLE
+console.log("this : ", this.tagName); //TABLE
+*/
+</script>  
+</body>
+</html>

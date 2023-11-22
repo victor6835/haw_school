@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style>
+	h2{
+		color:deeppink;
+	}
+</style>
+</head>
+<body>
+
+<h2>var 有hoist現象(提昇)</h2>
+<script> 
+	//var a;
+	document.write( "a : ", a, "<br>");
+	var a = 10;
+	document.write( "a : ", a, "<br>");
+</script>
+
+
+<h2>var 可以重覆宣告</h2>
+<script>
+	var a = 20; //a : 100
+	var a = 100;
+	document.write( "a : ", a, "<br>");
+</script>
+
+ 
+<h2>var 没有區塊作用域</h2>
+<script>
+	var avg = 30; //avg:30, msg:"再努力~"
+	if( avg >= 60){ 
+		var msg = "通過~"; //區塊內宣告
+		document.write( "msg : ", msg, "<br>");
+	}else{
+		var msg = "再努力~"
+		document.write( "msg : ", msg, "<br>");
+	}
+	document.write( "msg---區塊外仍可使用 : ", msg, "<br>");
+</script>
+
+<h2>-------let 没有hoist現象(提昇)</h2>
+<script> 
+	//document.write( "aa : ", aa, "<br>"); //此行error
+	let aa = 10;
+	document.write( "aa : ", aa, "<br>"); 
+</script>
+
+<h2>-------let 不可以重覆宣告</h2>
+<script>
+	let bb = 20;
+	//let bb = 100; //此行error
+	document.write( "bb : ", bb, "<br>");
+</script>
+ 
+<h2>-------let有區塊作用域</h2>
+<script>
+	let average = 30;  //average : 30
+	if( average >= 60){
+		let message = "通過~"; //區塊內宣告只能在區塊內使用
+		document.write( "message : ", message, "<br>");
+	}else{
+		let message = "再努力~";
+		document.write( "message : ", message, "<br>");
+	}
+	document.write( "average : ", average, "<br>");   	
+	//document.write( "message : ", message, "<br>"); // 此行會error
+</script>
+
+
+
+<h2>没有宣告的變數</h2>
+<script>
+	//變數未經事先宣告, 不可以取值
+	//document.write( "qqq : ", qqq, "<br>"); //此行會error
+	//caught ReferenceError: qqq is not defined
+ 
+	//變數未經事先宣告, 可以給值
+	mm = "巧克力";  //變數未經事先宣告
+	document.write( "mm : ", mm, "<br>");
+</script>
+
+<!---->
+</body>
+</html>

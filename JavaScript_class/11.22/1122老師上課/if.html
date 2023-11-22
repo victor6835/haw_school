@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style>
+	h2{
+		color:deeppink;
+	}
+</style>
+</head>
+<body>
+
+<h2>if 句型1(單一敍述)</h2>
+<script>
+	var avg = 87;
+	
+	if(avg>=60)  //若條件成立
+		document.write("通過<br>");
+	else //條件不成立
+		document.write("三餐飯後睡前複習<br>")	
+	
+	//else句型如果不需要可以省略
+</script>
+
+ 
+<h2>if 句型2(多行敍述)</h2>
+<script>
+	var avg = 37;
+	if(avg>=60) {//若條件成立
+		document.write("通過<br>");
+		document.write( "證書列印中...<br>");
+	} else {//條件不成立
+		document.write( "再努力~", "<br>");
+		document.write("三餐飯後睡前複習<br>");
+	}
+</script>
+
+<h2>if 句型3(複雜條件,比較配合邏輯)</h2>
+<script>
+	//如果平均分數大於等80, 而且數學大於70則錄取
+	var avg = 85;
+	var math = 70;
+	if(avg>=80 && math>70) {
+		document.write("錄取<br>");
+	} else {
+		document.write("再試一次<br>");
+	}
+</script>
+
+<h2>if 句型4(if else if...)</h2>
+<script>
+	var avg = 98;
+	var grade;
+	if (avg>=90) {
+		grade = "A";
+	} else if (avg>=80) {
+		grade = "B";
+	} else if (avg>=70) {
+		grade = "C";
+	} else if (avg>=60) {
+		grade = "D";
+	} else {
+		grade = "E";
+	}
+	document.write(  "grade : ", grade, "<br>");
+</script>
+
+<h2>if句型......5</h2>
+<script>
+	//可以有巢狀if
+	var lowType = "1"; //第1類:5000, 第2類:3000, 第3類:1000, 第一類
+	var education = false;
+	var amount;
+
+	if(lowType === "1") {
+		amount = 5000;
+		if(education === true) {
+			amount = amount + 1000;
+		}
+	} else if(lowType === "2") {
+		amount = 3000;
+	} else if(lowType === "3") {
+		amount = 1000;
+	} else {
+		amount = 0;
+	}
+
+	document.write( "補助款 : ", amount, "<br>");
+</script>
+
+<h2>三元運算子</h2>
+<script>
+	var avg = 77;
+	if(avg >= 60) {
+		document.write("pass", "<br>");
+	} else {
+		document.write("fail", "<br>");
+	}
+
+	//上述可以簡化成
+	document.write( avg>60?"pass":"fail" , "<br>");
+		
+</script>
+<!---->
+</body>
+</html>
