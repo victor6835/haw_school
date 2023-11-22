@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>geteelementsbyid</title>
+    
+</head>
+<body>
+    <p id="demo">change color</p>
+    <button onclick="myColor('red')">red</button>
+    <button onclick="myColor('blue')">blue</button>
+    
+    <script>
+        function myColor(newcolor){
+            var changecolor = document.getElementById("demo");
+            changecolor.style.color = newcolor;
+        }
+    </script>
+</body>
+</html>

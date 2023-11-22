@@ -8,7 +8,26 @@
 </head>
 
 <body>
-    <h2>作業16</h2>
+    <h2>作業17 請寫一個rand(min,max)函數,可以傳入min與max的整數,並回傳一個介於min和max間的整數值 (大於等於min,小於等於max)</h2>
+    <script>
+        function rand(min, max) {
+         // 確保min和max是整數
+         min = Math.ceil(min);
+         max = Math.floor(max);
+    
+    // 產生介於min和max之間的整數
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+         // 測試函數
+         var result = rand(1, 10);
+         console.log(result); // 可能輸出介於1和10（包含1和10）之間的整數
+
+    </script>
+
+
+
+    <h2>作業16以陣列存放3位同學的通訊資料, 並印出</h2>
     <script>
         var array = [["學號", "姓名", "電話", "地址"], ["94951001", "黃一丁", "0911000333", "中壢市中大路1號"], ["94951002", "劉二毛", "0922999887", "高雄市中山路2號"], ["94951003", "張大化", "0933555779", "台北市師大路3號"]];
 
