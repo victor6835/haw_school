@@ -37,12 +37,13 @@ function myBody_click(){
 
 //註冊事件處理器, 改用addEventListener()來寫
 
-//document.getElementById("btn").addEventListener("click", btn_click, false);
-
+document.getElementById("btn").addEventListener("click", btn_click, false);
+document.getElementById("myForm").addEventListener("click", myForm_click, true);
+document.getElementById("myBody").addEventListener("click", myBody_click, true);
 //----------------------------------------
 //(true, false, false): ??? -> ??? -> ???
-//(false, true, false): ??? -> ??? -> ???
-//(false, true, true): ??? -> ??? -> ???
+//(false, true, false): myForm -> btn -> myBody
+//(false, true, true): myBody -> myForm -> btn
 </script>
 </body>
 </html>
