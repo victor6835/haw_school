@@ -1,0 +1,6 @@
+event_mouse.html(介紹event物件< event.target)
+key event
+點小圖show大圖, getElementsByClassName(), querySelectorAll()
+setInterval(); clearInterval();
+setTimeout(); clearTimeout();
+bubble, capture
