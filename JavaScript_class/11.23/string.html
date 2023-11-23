@@ -1,65 +1,89 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>String</title>
+    <meta charset="utf-8">
+    <title>String</title>
 </head>
+
 <body>
-<script type="text/javascript">
-var obj = new String("abcde");
-document.write("typeof obj : ", typeof obj, "<br>"); //object
-document.write("obj.length : " , obj.length, "<br>"); //5
+    <script type="text/javascript">
+        var obj = new String("abcde");
+        document.write("typeof obj : ", typeof obj, "<br>"); //object
+        document.write("obj.length : ", obj.length, "<br>"); //5
 
 
-var str="abcdeabcde";
-document.write("typeof str : ", typeof str, "<br>"); //string
-document.write("str.length : " , str.length, "<br>"); //
-document.write("toUpperCase() : " , str.toUpperCase(), "<hr>"); //
-document.write("str : ", str, "<hr>"); //
+        var str = "abcdeabcde";
+        document.write("typeof str : ", typeof str, "<br>"); //string
+        document.write("str.length : ", str.length, "<br>"); //
+        document.write("toUpperCase() : ", str.toUpperCase(), "<hr>"); //
+        document.write("str : ", str, "<hr>"); //
 
 
 
-document.write("indexOf('cd') : " , str.indexOf("cd"), "<br>"); //
-document.write("indexOf('cdd') : " , str.indexOf("cdd"), "<hr>");//
-document.write("lastIndexOf('cd') : " , str.lastIndexOf('cd'), "<br>"); //
-document.write("lastIndexOf('cdd') : " , str.lastIndexOf('cdd'), "<br>"); //
-document.write("match('cd') : " , str.match('cd'), "<br>"); //
-document.write("match('cdd') : " , str.match('cdd'), "<hr>"); //
+        document.write("indexOf('cd') : ", str.indexOf("cd"), "<br>"); //
+        document.write("indexOf('cdd') : ", str.indexOf("cdd"), "<hr>");//
+        document.write("lastIndexOf('cd') : ", str.lastIndexOf('cd'), "<br>"); //
+        document.write("lastIndexOf('cdd') : ", str.lastIndexOf('cdd'), "<br>"); //
+        document.write("match('cd') : ", str.match('cd'), "<br>"); //
+        document.write("match('cdd') : ", str.match('cdd'), "<hr>"); //
 
 
-document.write("charAt(3) : " , str.charAt(3), "<br>");  //
-document.write("charCodeAt(3) : " , str.charCodeAt(3), "<br>"); // 
-//abcdeabcde
+        document.write("charAt(3) : ", str.charAt(3), "<br>");  //
+        document.write("charCodeAt(3) : ", str.charCodeAt(3), "<br>"); // 
+        //abcdeabcde
 
 
-document.write("substr(2,5) : " , str.substr(2,5), "<br>"); //
-document.write("substring(2,5) : " , str.substring(2,5), "<br>");//
-document.write("substr(2,50) : " , str.substr(2,50), "<br>"); //
-document.write("substr(2) : " , str.substr(2), "<hr>"); //
+        document.write("substr(2,5) : ", str.substr(2, 5), "<br>"); //
+        document.write("substring(2,5) : ", str.substring(2, 5), "<br>");//
+        document.write("substr(2,50) : ", str.substr(2, 50), "<br>"); //
+        document.write("substr(2) : ", str.substr(2), "<hr>"); //
 
 
-document.write("replace('de','QQQ') : " , str.replace('de','QQQ'), "<hr>"); //
+        document.write("replace('de','QQQ') : ", str.replace('de', 'QQQ'), "<hr>"); //
 
 
-str = "aa,bb,cc:dd,ee,ff";
-var arr = str.split(",");
-for(let i in arr){
-    document.write( arr[i], "<br>");
-}
+        str = "aa,bb,cc:dd,ee,ff";
+        var arr = str.split(",");
+        for (let i in arr) {
+            document.write(arr[i], "<br>");
+        }
 
-document.write(  "<hr>");
-
-/*
-字串應用範例
-var fileStr = "Sara.smile.png";
-var fileName, fileExt;
+        document.write("<hr>");
 
 
-//---------------顯示是否是被允許的副檔名
-//被允許的副檔名: bmp, png, gif, ico
+        // 字串應用範例
+        var fileStr = "Sara.smile.png";
+        var fileName, fileExt;
+        var dotPot = fileStr.lastIndexOf(".");
+        fileName = fileStr.substring(0, dotPos);
+        fileName = fileStr.substring(dotPos + 1);
+        document.write(`主檔名:${fileName}<br>)`);
+        document.write(`副檔名:${fileExt}<br>)`);
 
-*/
-</script>  
+        //---------------顯示是否是被允許的副檔名
+        var extAllowed = ["bmp", "png", "gif", "ico"];
+
+        if (extAllowed.indexOf(fileExt) === -1) {
+            document.write(`主檔名:${fileExt} 不是合法的圖片格式`);
+        } else {
+            document.write(`副檔名:${fileExt} 是合法圖片格式)`);
+
+        }
+        
+        
+
+    </script>
+<h2>加碼</h2>
+<script>
+    function getFileInfo(fileStr){
+        let dotPots = fileStr.lastIndexOf(".");
+        let fileName = fileStr.substring(0, dotPots);
+        let filExt = fileStr.substr(dotPos+1);
+        return[fileName, fileExt];
+    }
+        //被允許的副檔名: bmp, png, gif, ico
 
 </body>
+
 </html>
