@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event listener</title>
+</head>
+<body>
+    <img id="img" src="./pain0.jpg" width="300" alt="">
+    <button id="btn">按我</button>
+    <!-- /*this 將button標籤傳給handle_click*/ -->
+    <script>
+        // function handle_click(element){
+        //     // return alert("叫你按嗎?");
+        //     element.innerText = "按屁阿"
+        //     element.style.color = "red";
+        // }
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click", function(){
+            alert("一袋米要扛幾樓");
+            this.innerText ="訂五包米";
+            this.style.backgroundColor = "red"
+        })
+
+       var img = document.getElementById("img");
+       img.addEventListener("mouseover", function(){
+        this.src = "pain.webp";
+       })
+
+      var img = document.getElementById("img");
+      img.addEventListener("mouseout", function(){
+        this.src = "pain0.jpg";
+      })
+        
+    </script>
+</body>
+</html>
