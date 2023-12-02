@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array3</title>
+</head>
+
+<body>
+    <script>
+        let user = [
+            {
+                id: 1,
+                name: 'John',
+                mail: 'john@gmail.com'
+            },
+            {
+                id: 2,
+                name: 'Victor',
+                mail: 'victor@gmail.com'
+            },
+            {
+                id: 3,
+                name: 'Kyle',
+                mail: 'kyle@gmail.com'
+            },
+        ];
+
+        let drinks = [
+            {
+                id: 1,
+                name: '紅茶',
+                price: '20'
+            },
+            {
+                id: 2,
+                name: '綠茶',
+                price: '20'
+            },
+            {
+                id: 3,
+                name: '奶茶',
+                price: '20'
+            },
+        ]
+
+        //foreach 或是一般for都能抓出資料
+        user.forEach(function(data){
+            console.log(data.mail);
+            console.log(data.name);
+        })
+
+        //map (相當常用):將陣列取出要得值後以陣列回傳
+    </script>
+</body>
+
+</html>

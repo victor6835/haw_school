@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //變數variable
+       /* 命名規範:
+       1. 首字只可以使用英文
+       2. 大小寫有別
+       3. 不可使用保留字*/
+        var a = 100;
+        var a = 200;/*var可以重複宣告*/
+        var b = 'hello'
+        console.log(a,b);
+
+        let x = 222;
+       /* let x = 223;*//*let 不可重複宣告*/
+        console.log(x);
+
+        //常數 constant variable
+
+        const q = 'qwerty';
+        // q = 'hello'
+        console.log(q);
+
+        /*
+        var可以重複宣告; let, const 不行
+        constt不可以重新賦值
+        var是function scope; let, const 是 block scope
+        */
+
+        // 資料型別
+        /*
+        數值 number
+        字串 string
+        布林 boolean
+
+        為定義 Underfined
+        空值 Null
+
+        陣列 array
+        物件 object
+
+        函式 function
+        符號 symbol
+        */
+        let qq = function(){};
+        console.log(typeof(qq))
+    </script>
+    
+</body>
+</html>

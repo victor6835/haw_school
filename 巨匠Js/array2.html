@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array 2</title>
+</head>
+<body>
+    <script>
+    let drinks = ['礦泉水', '奶茶', '綠茶','水果茶'];
+
+    //push(),pop()
+    drinks.push('拿鐵', "可樂");/*加資料到最後*/
+    drinks.pop();/*刪除最後資料*/
+
+    //unshift()，shift()
+    drinks.unshift('可樂','芭樂汁');/*加資料到最前*/
+    drinks.shift()/*刪除第一資料*/
+
+    //splice()拼接
+    drinks.splice(1,0,'雪碧', '黑松沙士');/*第一項前方開始拼接*/
+    drinks.splice(2,1);/*從第二個開始刪除一項*/
+
+    //slice()切片    
+    let myDrinks = drinks.slice(0,2);/*切片0-2，2不算*/
+    console.log(drinks);
+    console.log(myDrinks);
+
+    //join()陣列轉字串
+    let drink_join = drinks.join('飲料:');
+    console.log(drink_join);
+
+    //toString陣列轉字串
+    let drink_str = drinks.toString();
+    console.log(drink_str);
+
+    //字串轉成陣列
+    let str = '礦泉水, 奶茶, 綠茶, 水果茶';
+    console.log(str.split(','))
+    
+    //sort() 雞肋排序:英文可
+    let myArray = ['Cook', 'Good','Zoo','Banana'];
+    console.log(myArray.sort());
+
+    //reverse()反轉
+    console.log(myArray.sort().reverse());
+
+    let s = 'hello';
+    console.log(s.split(' ').reverse().join(' '));
+    </script>
+</body>
+</html>
