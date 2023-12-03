@@ -31,17 +31,22 @@
             {
                 id: 1,
                 name: '紅茶',
-                price: '20'
+                price: 20
             },
             {
                 id: 2,
                 name: '綠茶',
-                price: '20'
+                price: 30
             },
             {
                 id: 3,
                 name: '奶茶',
-                price: '20'
+                price: 40
+            },
+            {
+                id: 4,
+                name: '珍珠奶茶',
+                price: 50
             },
         ]
 
@@ -51,7 +56,63 @@
             console.log(data.name);
         })
 
-        //map (相當常用):將陣列取出要得值後以陣列回傳
+        // for(let data of user){
+        //     console.log(data.mail);
+        //     console.log(data.name);
+        // }
+
+        //map (相當常用):將陣列取出需要的值後以陣列回傳
+        let drinkName = drinks.map(function(data){
+            return data.name;
+        })
+        let drinkPrice = drinks.map(function(data){
+            return data.price;
+        })
+        console.log(drinkName);
+        console.log(drinkPrice);
+
+        //filter (過濾出price 小於等於30，再用map以陣列印出)
+        let cheap = drinks.filter(function(data){
+            return data.price <= 30
+            }) 
+        console.log(cheap)
+        let cheapName = cheap.map(function(data){
+            return data.name;
+        })
+        console.log(cheapName);
+
+        //篩選出珍珠奶茶
+
+        let bubble = drinks.filter(function(data){
+            return data.name == "珍珠奶茶";
+        })
+        console.log(bubble);
+
+        // filter 可用於刪除資料，如splice
+        drinks = drinks.filter(function(data){
+            return data.name != '綠茶';
+        })
+        console.log(drinks);
+
+        // drinks.splice(1,1);/*splice須找到綠茶位置再做刪除*/
+        // console.log(drinks);
+
+        //includes()檢查裡面有沒有 true or false
+        let result = drinkName.includes('奶茶');
+        console.log(result);
+
+        //reduce()通常用來做加總，如購物車
+        console.log(drinkPrice);
+        let total = drinkPrice.reduce(function(a,b){
+            return a + b;
+        })
+        console.log(total);
+        /*
+        a:20 b:30
+        a:50 b:40
+        a:90 b:50
+        a:140 b:undefined
+        */
     </script>
 </body>
 
