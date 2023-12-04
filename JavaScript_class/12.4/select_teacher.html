@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Selection</title>
+</head>
+<body>
+
+<select id="teacher" onchange="updateTeacher()">
+  <option value="DoDo">AA101</option>
+  <option value="楊宏文">AC101</option>
+  <option value="沈潔華">AD701</option>
+</select>
+
+導師: <span id="showPanel" style="color: blue"></span>
+
+<script>
+  function updateTeacher() {
+    // Get the selected value from the dropdown
+    var selectedTeacher = document.getElementById("teacher").value;
+
+    // Update the content of the showPanel span
+    document.getElementById("showPanel").innerText = selectedTeacher;
+  }
+</script>
+
+</body>
+</html>
+
+
+<!-- // let teacher = document.getElementById("teacher");	
+// document.write("length : ", teacher.length, "<br>");//3
+// document.write("multiple : ", teacher.multiple, "<br>"); //false
+// document.write("options[2] : ", teacher.options[2], "<br>");	
+// document.write("options[2].length : ", teacher.options[2].length, "<br>");
+// document.write("options[2] : ", teacher.options[2], "<br>");	
+// document.write("options[2].text : ", teacher.options[2].text, "<br>");
+// document.write("options[2].value : ", teacher.options[2].value, "<br>");
+// document.write("options[2].defaultSelected : ", teacher.options[2].defaultSelected, "<br>");	
+// document.write("options[2].selected : ", teacher.options[2].selected, "<br>");		 -->
+</script>
+</body>
+</html>
