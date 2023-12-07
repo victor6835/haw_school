@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style>
+
+</style>
+</head>
+
+<body>
+
+<table align="center" cellspacing="0" border="1">
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+    <tr><td id="td51">11111111</td><td id="td52">aaaaaaaaaa</td></tr>
+</table> 
+
+<script>
+//註冊事件處理器
+function highlight() { 
+    let obj = document.getElementById("td51");
+    obj.style.backgroundColor="lightblue";
+} 
+
+function normal() {
+    let obj = document.getElementById("td51");
+    obj.style.backgroundColor="white";
+} 
+
+function highlight2() { 
+    let obj = document.getElementById("td52");
+    obj.style.backgroundColor="lightblue";
+} 
+
+function normal2() {
+    let obj = document.getElementById("td52");
+    obj.style.backgroundColor="white";
+} 
+
+//-----------------------------------------
+function init() {
+    document.getElementById("td51").onmouseover = highlight; 
+    document.getElementById("td51").onmouseout = normal;       
+
+    document.getElementById("td52").onmouseover = highlight2; 
+    document.getElementById("td52").onmouseout = normal2;     
+
+}    
+//window.addEventListener("DOMContentLoaded", init, false);    
+window.addEventListener("load", init, false);   
+</script>  
+</body>
+</html>

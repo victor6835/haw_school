@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Object 簡介</title>
+<style>
+  h2 { color:deepPink}
+</style>
+</head>
+
+<body>	  			 
+<h2> new Object()</h2>
+<script>  
+// function apply(money){  
+//     if( money <= 10000){
+// 		document.write("申請費用", money , ", 通過<br>") ;
+//     }else{
+//     	document.write("申請費用", money , ", 超過10000元，不通過<br>") ;
+//     }
+// }
+
+var emp = new Object();
+emp.empno = "7111";
+emp.ename = "Adam";
+emp.apply = function(money){ 
+							document.write(`申請費用${money}元<br>`) ;
+			} /* */
+document.write("代號 : " , emp.empno , "<br>");
+document.write("姓名 : " , emp.ename , "<br>");
+emp.apply(6000);
+</script>
+
+<h2>Object literals</h2>
+<script> 	
+var emp2 = {
+				empno: "7112", 
+				ename: "Ann",
+				apply: function(money){ 
+									document.write(`申請費用${money}元<br>`) ;
+								}
+			}
+emp2.apply(7000);
+emp3 = {
+	empno : "7113",
+	ename : "David"
+}
+//emp3.apply(6000); //error
+</script>
+
+<h2>Object literals------2</h2>
+<script> 
+//ES6提供簡化的字面值撰寫方法(short notation)。	
+let empNo = "7118";
+let ename = "SCOTT";	
+var emp = {empNo,ename,	apply(money){ 
+						document.write(`申請費用${money}元<br>`) ;
+					}
+			}
+emp.apply(7700);
+</script>
+
+
+
+<!--  -->
+
+</body>
+</html>

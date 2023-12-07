@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style>
+	h2{
+		color:deeppink;
+	}
+</style>
+</head>
+
+<body>
+
+<h2>單元 + 轉數值</h2>
+<script>
+	var price = "100";
+	document.write( "typeof price : ", typeof price, "<br>");
+	document.write( "typeof +price : ", typeof +price, "<br>");
+</script>
+
+
+<h2>使用!! 來轉成布林值-------1</h2>
+<script>
+	//------------可以使用 !!來將字串轉成布林值
+	var errMsg = "email未填"; 
+	document.write( "typeof errMsg : ", typeof errMsg, "<br>"); //string
+	errMsg = !!errMsgMsg; //可以使用!!來轉成布林值, !(! errMsg)=>! (!true)=>! (false) =>true
+	document.write( "typeof !!err : ", typeof err, "<br>");
+</script>
+
+
+<h2>使用!! 來轉成布林值---------2</h2>
+<script>
+	//------------可以使用 !!來將字串轉成布林值
+	var errMsg = ""; 
+	document.write( "typeof errMsg : ", typeof errMsg, "<br>"); //string
+	errMsg = !!errMsgMsg; //可以使用!!來轉成布林值, !(!errMsg)=>! (!false)=>! (true) =>false
+	document.write( "typeof !!err : ", typeof err, "<br>");
+</script>
+
+<script>
+	var x = "123"; //string
+	x = parseInt(x);//轉成整數
+
+	var y = "123"; //string
+	y = !!y; //轉成boolean:true
+
+	var z = ""; //string
+	z = !!z; //轉成boole:false
+</script>
+<!---->
+
+</body>
+</html>

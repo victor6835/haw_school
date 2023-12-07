@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            color:deeppink
+        }
+    </style>
+</head>
+<body>
+<h2>array.forEach()</h2>
+<script>
+
+function toHtml(data) { //data:22
+    document.write(data, "<br>");
+}
+
+var arr = [11, 22, 33];
+arr.forEach(toHtml)
+</script> 
+
+
+<h2>array.map()</h2>
+<script>
+function double(data) { //data:22
+    return data * 2;
+}
+
+var arr = [11, 22, 33];
+var arr2 = arr.map(double); //[22, 44]
+
+document.write(arr2);
+</script>  
+
+
+<h2>array.map()-----2</h2>
+<script>
+function adjustSalary(data) { //data:22
+    return data + 1000;
+}
+
+var arr = [10000, 20000, 30000];
+var arr2 = arr.map(adjustSalary); //[11000, 21000, 31000]
+
+document.write(arr2);
+</script>
+
+<h2>array.filter()</h2>
+<script>
+var prices = [660, 26, 450, 53, 1100, 265];
+
+function lowerPrice(data) { //26
+    return data<500; //當條件為true時, 才是我們要的資料
+}
+
+var arr2 = prices.filter(lowerPrice);//[26, 450, 53, 100, 265]
+document.write(arr2, "<br>");
+</script>
+</body>
+</html>

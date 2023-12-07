@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style>
+	h2{
+		color:deeppink;
+	}
+</style>
+</head>
+
+<body>
+<h2>算術</h2>
+<script>
+	document.write( "10*4 : ", 10*4, "<br>"); //40
+	document.write( "10/4 : ", 10/4, "<br>"); //2.5
+	document.write( "10%4 : ", 10%4, "<br>"); //2
+</script>
+
+
+<h2>字串</h2>
+<script>
+	var zone = "中壢區";
+ 	var road = "復興路46號";
+ 	var address = zone + road;
+ 	document.write(  "address : ", address, "<br>");	
+</script>
+
+
+<h2>比較</h2>
+<script>
+	document.write( "10>4 : ", 10>4, "<br>"); //true
+	document.write( "10<=4 : ", 10<=4, "<br>");  //false
+
+	document.write( "0===false : ", 0===false,"<br>"); //false
+	document.write( "0==false : ", 0==false,"<br>"); //true
+	document.write( "NaN===NaN : ", NaN===NaN,"<br>"); //false
+</script>
+
+
+<h2>邏輯</h2>
+<script>
+	document.write( "10>4 && 10<6 : ", 10 > 4 && 10 < 6, "<br>"); //false
+	document.write( "10>4 || 10<6 : ", 10 > 4 || 10 < 6, "<br>"); //true
+
+	document.write( "! 10>4  : ", ! 10 > 4, "<br>"); //------注意 false>4==> 0>4 (false)
+
+    document.write( "! 2>4  : ", ! 2 > 4, "<br>");  //false>4 ==>false 
+   
+    document.write( "!(2>4)  : ", !(2>4), "<br>"); //! false ==> true
+
+	//運算優先序
+	//!(not) 
+	//*, /
+	//+, -
+	//>, >=, < , <=   
+	//&&, || 
+</script>
+
+
+<h2>位元</h2>
+<script>
+	document.write( "10 & 6 : ", 10 & 6,"<br>"); //2
+	document.write( "10 | 6 : ", 10 | 6, "<br>"); //14
+</script>
+
+
+<h2>指定</h2>
+<script>
+	var x = 10;
+	x += 2; //??????改寫
+	document.write( "x : ", x, "<br>");
+
+	var y = 100;
+	y *= 3; //??????改寫
+	document.write( "y : ", y, "<br>");
+
+	var mm ,nn ,kk ; //mm:1000, nn:1000, kk:1000
+	mm = 10;
+	nn = 10; 
+	kk = 10;
+
+	kk = nn = mm = 1000;//-----------
+
+	document.write( "mm : ", mm, "<br>");
+	document.write( "nn : ", nn, "<br>");
+	document.write( "kk : ", kk, "<br>");	
+</script>
+
+
+<h2>typeof</h2>
+<script>
+	var price = "100";
+	document.write( "typeof price : ", typeof price, "<br>"); //string
+</script>
+
+
+<h2>++在前-----1</h2>
+<script>
+	var x = 10;
+	var y = ++x + 5;
+	document.write( "x : ", x, "<br>"); //11
+	document.write( "y : ", y, "<br>"); //16
+</script>
+
+
+<h2>++在後-----1</h2>
+<script>
+	var x = 10;
+	var y = x++ + 5;
+	document.write( "x : ", x, "<br>"); //11
+	document.write( "y : ", y, "<br>"); //15
+</script>
+
+
+<h2>++在前-----2</h2>
+<script>
+	a = 10;
+	b = ++a + ++a;  
+	document.write( "a : ", a, "<br>"); //12
+	document.write( "b : ", b, "<br>"); //23
+</script>
+
+<h2>++在後-----2</h2>
+<script>
+	a = 10;
+	b = a++ + a++;  
+	document.write( "a : ", a, "<br>"); //12
+	document.write( "b : ", b, "<br>"); //21
+</script>
+
+<h2>++在前,++在後-----3</h2>
+<script>
+	a = 10;
+	b = ++a + a++;
+	document.write( "a : ", a, "<br>"); //12
+	document.write( "b : ", b, "<br>"); //22
+</script>
+<!--  -->
+</body>
+</html>

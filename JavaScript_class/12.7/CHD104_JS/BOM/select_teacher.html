@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>select object Examples</title>
+</head>
+
+<body>
+    
+班級
+<select id="teacher">	
+	<option value="DoDo">AA101</option>
+	<option value="楊宏文">AC101</option>
+	<option value="沈潔華">AD701</option>  
+</select>
+導師 : <span id="showPanel" style="color:blue"></span><p>
+
+<script>
+function showInfo(){
+	document.getElementById("showPanel").innerText = document.getElementById("teacher").value;
+}	
+
+window.addEventListener("load", function(){
+	//-----------初始頁面或變數
+	showInfo();	
+	//-----------註冊teacher.onchange事件處理器
+	document.getElementById("teacher").onchange = showInfo;
+})	
+
+/* let teacher = document.getElementById("teacher");	
+document.write("length : ", teacher.length, "<br>");//3
+document.write("multiple : ", teacher.multiple, "<br>"); //false
+document.write("options : ", teacher.options, "<br>");	
+document.write("options.length : ", teacher.options.length, "<br>");
+document.write("options[2] : ", teacher.options[2], "<br>");	
+document.write("options[2].text : ", teacher.options[2].text, "<br>");
+document.write("options[2].value : ", teacher.options[2].value, "<br>");
+document.write("options[2].defaultSelected : ", teacher.options[2].defaultSelected, "<br>");	
+document.write("options[2].selected : ", teacher.options[2].selected, "<br>");		
+ */
+</script>
+</body>
+</html>

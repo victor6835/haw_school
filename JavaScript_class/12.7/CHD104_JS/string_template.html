@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>defaultValue</title>
+</head>
+
+<body>
+
+<!-- <table  border='1' cellspacing='0'>
+	<tr><th>姓名</th><td>Ann</td></tr>
+    <tr><td>到職日</th><td>2000-02-02</td></tr>
+</table> -->
+
+<h2>ES6之前.....</h2>
+<script type="text/javascript">
+//-----------1
+//單引號或雙引號不能簡單的寫成多行
+document.write("<table border='1' cellspacing='0'>");
+document.write("<tr><th>姓名</th><td>Ann</td></tr>");
+document.write("<tr><th>到職日</th><td>2000-02-02</td></tr>");
+document.write("</table>");
+
+//-----------2
+//輸出的網頁結構中若含有變數, 必須詳細串結
+var name = 'Ann';
+var hiredate = "1986-03-15";
+var salary = 55500;	
+
+document.write('<table border="1" cellspacing="0">');
+document.write('<tr><th>姓名</th><td>' , name , '</td></tr>');
+document.write('<tr><th>薪資</th><td>' , hiredate , '</td></tr>');
+document.write('<tr><th>到職日</th><td>' , salary , '</td></tr>');
+document.write('</table>');
+
+</script>
+
+<h2>ES6 的反引號字串</h2>
+<script>
+//-----------1    
+//ES6可以使用反引號讓字串以多行形式呈列
+var html;
+html = `<table  border='1' cellspacing='0'>
+	<tr><th>姓名</th><td>Ann</td></tr>
+    <tr><td>到職日</th><td>2000-02-02</td></tr>
+</table>`;
+
+document.write(html, "<br>");
+
+//-----------2   
+//反引號中可以使用${}內放入變數或運算式或呼叫函式	
+//字串可寫成多行	
+var name = "John";
+var hiredate = "1986-03-15";
+var salary = 55000;
+var html = `<table border='1' cellspacing="0">
+				<tr><th>姓名</th><td>${name}</td></tr>
+				<tr><th>薪資</th><td>${hiredate}</td></tr>
+				<tr><th>到職日</th><td>${salary+100}</td></tr>
+			</table>`;
+document.write(html);
+</script>
+
+
+<h2>反引號才有template的功能</h2>
+<script>
+
+
+//注意:單引號和雙引號没有套印的功能
+var name = "Alice";
+var html2 = "<h2>${name}的快樂天空</h2>"; 
+document.write(  html2, "<br>");
+</script>
+<!-- -->
+</body>
+</html>

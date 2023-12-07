@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+</head>
+
+<body>
+<script type="text/javascript">
+//---------------------陣列解構賦值
+/* 
+var arr = [11, 22, 33];
+//.....從前從前
+var a = arr[0]; //11
+var b = arr[1]; //22
+//ES6
+var [a, b] = arr;
+document.write("a : ", a, "<br>");
+document.write("b : ", b, "<br>"); 
+*/
+
+//---------------------對應不到會得到undefined
+/* 
+var arr = [11, 22, 33];
+var [aa, bb, cc, dd] = arr;
+document.write("aa : ", aa, "<br>");
+document.write("bb : ", bb, "<br>");
+document.write("cc : ", cc, "<br>");
+document.write("dd : ", dd, "<br>"); //undefined
+*/
+
+//---------------------對應不到, 可以給預設值
+/* 
+var arr = [11, 22, 33];
+var [aaa, bbb, ccc, ddd=100] = arr;
+document.write("aaa : ", aaa, "<br>");
+document.write("bbb : ", bbb, "<br>");
+document.write("ccc : ", ccc, "<br>");
+document.write("ddd : ", ddd, "<br>"); 
+*/
+
+//---------------------可以跳過某些值不要
+/* 
+var arr = [11, 22, 33];
+var [x, , y] = arr; //arr: [11, 22, 33], 索引值[1]不要
+document.write("x : ", x, "<br>"); //11
+document.write("y : ", y, "<br>"); //33 */
+
+//---------------------可以利用陣列解構來做變數交換
+/* 
+var a = 10;
+var b = 20;
+var [a, b] = [b, a]; //[20, 10]
+document.write("a : ", a, "<br>");
+document.write("b : ", b, "<br>");
+ */
+
+//也可交換陣列中[0],[2]的資料
+/* 
+var arr = [11, 22, 33];
+[arr[2], arr[0]] = [arr[0], arr[2]];
+document.write("arr : ", arr, "<br>");
+ */
+
+//...在=號左側(rest, 將解構剩餘元素給另一陣列)
+/* 
+var arr = [11, 22, 33, 44, 55, 66, 77];
+var [xx, yy, ...arr2] = arr;
+document.write("xx : ", xx, "<br>");
+document.write("yy : ", yy, "<br>");
+document.write("arr2 : ", arr2, "<br>"); //33, 44, 55, 66, 77
+ */
+
+
+//...在=號右側(spread, 將陣列解構展開)
+/* 
+var arr = [11, 22];
+var x = 10;
+var arr2 = [...arr, x];//將arr和x的資料放入arr2[11, 22, 10]
+document.write( arr2, "<br>"); 
+*/
+
+//---------------------從前從前....
+/* 
+var numbers = [11,22,33];
+function sum( a, b, c){
+	return a+b+c;
+}
+document.write("1---total = ", sum( numbers[0], numbers[1], numbers[2]) , "<br>");
+
+
+//------------將陣列解構展開後(spread)傳給參數
+function sum( a, b, c){
+	return a+b+c;
+}
+var numbers = [11,22,33];
+document.write("2---total : ", sum(...numbers),"<br>"); //??????
+ */
+
+//------------剩餘賦值給陣列參數rest parameter
+/* 
+function sum2(...arr){ //將所有剩下的所有引數資料給arr
+	let total = 0;
+	for(i in arr){
+		total += arr[i]
+	}
+	return total;
+}
+document.write("(10,20,30)total : ", sum2(10,20,30),"<br>");
+document.write("(10,20,30,40,50)total : ", sum2(10,20,30,40,50),"<br>");
+ */
+</script>    
+</body>
+</html>

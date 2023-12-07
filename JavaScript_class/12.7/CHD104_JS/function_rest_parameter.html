@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+</head>
+<body>
+<h2>rest parameters</h2>
+<script>
+function fn(a, b, //?????) { //剩下的給arr  //a:11, b:22, arr:[33, 44, 55]
+  document.write("a : ", a, "<br>");
+  document.write("b : ", b, "<br>");
+  //document.write("arr : ", arr, "<br>"); 
+}
+
+fn(11, 22, 33, 44, 55); //---------
+</script>    
+
+<!-- 
+<h2>rest parameters....................2</h2>
+<script>
+function sum(...arr) { //接收所有的引數資料放入arr中
+    let total = 0;  
+
+    for(let i=0; i<arr.length; i++){
+        total += arr[i];
+    }
+    return total;
+}   
+
+document.write("10 + 20 =", sum( 10, 20), "<br>"); //---------
+document.write("10 + 20 + 30 =", sum( 10, 20, 30), "<br>");
+document.write("10 + 20 + 30 + 40 =", sum( 10, 20, 30, 40), "<br>");
+</script>
+-->
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>formValidation_history.html</title>
+
+</head>
+<body>
+<script>
+	var query = location.search.substr(1); 
+
+	var memIdQueryStr = query.split("&")[0];  
+	var memIdValue = memIdQueryStr.split("=")[1];//
+	alert(memIdValue + " , 帳號已存在,請改用其他帳號");
+	history.back();
+</script>    
+</body>
+</html>

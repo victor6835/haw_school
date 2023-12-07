@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            color:deeppink;
+        }
+    </style>
+</head>
+<body>
+    <h2> 函式名稱()當做一般函式來呼叫</h2>
+    <script> 	
+    function Employee(empno, ename){
+        this.empno = empno;
+        this.ename = ename;
+        this.apply = function(money){ 
+                                    document.write(` ${this.ename}申請費用${money}元<br>`) ;
+                                }
+    }
+    document.write(`window.empno : ${window.empno}<br>`);
+    document.write(`window.ename : ${window.ename}<br>`);
+    Employee("7001", "Ann"); //當一般函式來呼叫時, 其內的this會參考到全域物件, 在此例指的是window物件
+    document.write(`window.empno : ${window.empno}<br>`);
+    document.write(`window.ename : ${window.ename}<br>`);
+    </script>  
+
+<h2> 使用函式名稱.call(物件, 引數.....)來呼叫</h2>
+<script> 	
+function Employee(empno, ename){
+    this.empno = empno;
+    this.ename = ename;
+    this.apply = function(money){ 
+                                document.write(` ${this.ename}申請費用${money}元<br>`) ;
+                 }
+}
+
+let dog = {}; //校犬
+
+Employee.call(dog, "0001", "Snoopy"); //呼叫Employee, 並將dog傳入Employee()函式, 令其內的this參考到dog物件
+document.write(`dog.empno : ${dog.empno}<br>`);
+document.write(`dog.ename : ${dog.ename}<br>`);
+dog.apply(8000);
+</script>  
+
+<h2> 使用new 建構函式名稱(引數.....)來呼叫</h2>
+<script> 	
+function Employee(empno, ename){
+    this.empno = empno;
+    this.ename = ename;
+}
+
+Employee.prototype.apply = function(money){ 
+                                document.write(` ${this.ename}申請費用${money}元<br>`) ;
+                 }
+
+var emp = new Employee("7001", "Adam");
+//emp = new Object();
+//Employee(emp, "7001", "Adam");  //呼叫Employee, 並將emp傳入Employee()函式, 令其內的this參考到emp物件
+document.write(`emp.empno : ${emp.empno}<br>`);
+document.write(`emp.ename : ${emp.ename}<br>`);
+emp.apply(1000);
+
+var emp2 = new Employee("7002", "Henry");
+//emp2 = new Object();
+//Employee(emp, "7002", "Henry");  //呼叫Employee, 並將emp傳入Employee()函式, 令其內的this參考到emp2物件
+document.write(`emp2.empno : ${emp2.empno}<br>`);
+document.write(`emp2.ename : ${emp2.ename}<br>`);
+emp2.apply(2000);
+</script>  
+</body>
+</html>

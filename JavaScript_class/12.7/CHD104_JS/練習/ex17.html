@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            width:20px
+        }
+    </style>
+</head>
+<body>
+<h2>------------1</h2>
+<script>
+function rand(min, max) { //1.1, 69.9
+    min = Math.ceil(min); //2
+    max = Math.floor(max);//69
+    let offset = max - min; //67;
+    let num = min + Math.floor(Math.random() * offset + 1); //2 + 67 -->69
+    return num;
+}
+document.write(rand(1, 49));
+</script>   
+
+
+<h2>------------2, 在網頁上隨機產生4~7個介於0..9之間不同顏色的數字</h2>
+<script>
+//先決定跑幾次
+var loop = rand(4,7);
+for(let i=1; i<=loop; i++) {
+	//決定要出現的數字是什麼
+    let num = rand(0,9);
+	//決定要顯示的顏色是什麼
+    let r = rand(0, 255);
+    let g = rand(0, 255);
+    let b = rand(0, 255);
+	//	印出來
+    document.write(`<span style="color:rgb(${r},${g},${b})">${num}</span>`)
+}
+
+</script>
+
+<h2>------------2, 在網頁上隨機產生4~7個介於0..9之間不同顏色的數字---2</h2>
+<script>
+//先決定跑幾次
+var loop = rand(4,7);
+var colorWanted = ["blue", "DarkCyan", "DarkOrange", "DeepSkyBlue", "deeppink", "BlueViolet", "CadetBlue", "Crimson", "DarkGoldenRod", "FireBrick"];
+for(let i=1; i<=loop; i++) {
+	//決定要出現的數字是什麼
+    let num = rand(0,9);
+	//決定要顯示的顏色是什麼
+    let colorIndex = rand(0, 9);
+    let color = colorWanted[colorIndex];
+	//	印出來
+    document.write(`<span style="color:${color}">${num}</span>`)
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keyword" content="HTML,CSS,Javascript">
+<title>Examples</title>
+<style>
+	h2 {
+		color:deeppink;
+	}
+</style>
+</head>
+
+<body>
+<h2>没有參數也没有傳回值</h2>
+<script>
+function sayHello() {
+	document.write("Hello, world~<br>");
+	return;
+}
+
+sayHello();
+</script>
+
+
+<h2>有參數, 没有傳回值</h2>
+<script>
+function sayHelloToSomeone(name) {
+	document.write("Hello, " + name + "~<br>" );
+}
+
+sayHelloToSomeone("Sarah");
+</script>
+
+
+<h2>有參數, 有傳回值</h2>
+<script>
+function sum(a, b) {  //a, b是parameter(參數)
+	let total = 0;  
+	total = a + b;
+	return total;
+}
+
+function sum(a, b, c) { //a:10, b:20, c:undefined
+	let total = 0;  
+	total = a + b + c;
+	return total;
+}
+document.write(`10 + 20 = `, sum(10,20), "<br>"); //10, 20是arguments(引數,引用的資料)
+document.write(`10 + 20 + 30 = `, sum(10,20,30), "<br>");
+</script>
+
+<h2>arguments</h2>
+<script>
+function sum(a, b){  //:10, :20//------------
+	//arguments:{10, 20}, arguments[0]:10, arguments[1]:20, arguments.length:2
+	
+	//arguments:{10, 20, 30}, arguments[0]:10, arguments[1]:20, arguments[2], 
+	//arguments.length:3 
+	var total = 0;
+	//改寫下段程式
+	for(let i=0; i<arguments.length; i++) {
+		total += arguments[i];
+	}
+
+	return total;
+}	
+
+document.write("10 + 20 = ", sum( 10, 20), "<br>"); 
+document.write("10 + 20 + 30 = ", sum( 10, 20, 30), "<br>");
+</script>
+
+
+<h2>避免和全域方法同名</h2>
+<script>
+function alert(message) {
+	document.write(message, "<br>")
+}	
+
+window.alert("test...........1");
+alert("test...........2");		
+</script>
+
+<h2>參數給預設值-----ES6</h2>
+<script>
+function showMsg(message = "Hello~"){  //message:undefined
+	document.write( message, "<br>");
+}
+
+showMsg("禱告~");
+showMsg();
+</script>
+
+<h2>參數給預設值-----ES6之前.....1</h2>
+<script>
+function showMsg(message){  //message:0
+	message = message || "Hello~";
+	document.write( message, "<br>");
+}
+
+showMsg("禱告~");
+showMsg();
+showMsg(0);
+</script>
+
+<h2>參數給預設值-----ES6之前.....2</h2>
+<script>
+function showMsg(message){  
+	message = arguments.length === 0 ? "Hello~" : message;
+	document.write( message, "<br>");
+}
+
+showMsg("禱告~");
+showMsg();
+showMsg(0); //想要顯示0
+showMsg(undefined); //想要顯示undefined
+</script>
+<!--  -->
+
+
+<h2>rest parameter</h2> 
+<script>
+function sumMany(...arr){
+	let sum = 0;
+	//arguments.push(1000);//arguments, 不是陣列, 不可以使用陣列物件的方法
+	//arr.push(1000); //rest parameters, 是陣列, 可以使用陣列物件的方法
+	for(let i=0; i<arr.length; i++){
+		sum += arr[i];
+	}
+	return sum;
+}
+
+document.write("sumMany(11,22,33) : ", sumMany(11,22,33), "<br>");
+document.write("sumMany(10,20,30,40,50) : ", sumMany(10,20,30,40,50), "<br>");
+</script>
+<!--  -->
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>String</title>
+</head>
+<body>
+<script type="text/javascript">
+var obj = new String("abcde");
+document.write("typeof obj : ", typeof obj, "<br>"); //object
+document.write("obj.length : " , obj.length, "<br>"); //5
+
+//---------------------------------------------------------------
+var str="abcdeabcde";
+document.write("typeof str : ", typeof str, "<br>"); //string
+document.write("str.length : " , str.length, "<br>"); //10
+document.write("toUpperCase() : " , str.toUpperCase(), "<hr>"); //ABCDEABCDE
+document.write("str : ", str, "<hr>"); //
+
+//---------------------------------------------------------------
+document.write("indexOf('cd') : " , str.indexOf("cd"), "<br>"); //2
+document.write("indexOf('cdd') : " , str.indexOf("cdd"), "<hr>");//-1
+
+document.write("lastIndexOf('cd') : " , str.lastIndexOf('cd'), "<br>"); //7
+document.write("lastIndexOf('cdd') : " , str.lastIndexOf('cdd'), "<br>"); //-1
+
+document.write("match('cd') : " , str.match('cd'), "<br>"); //cd
+document.write("match('cdd') : " , str.match('cdd'), "<hr>"); //null
+
+//---------------------------------------------------------------
+document.write("charAt(3) : " , str.charAt(3), "<br>");  //d
+document.write("charCodeAt(3) : " , str.charCodeAt(3), "<br>"); //100 
+
+
+document.write("substr(2,5) : " , str.substr(2,5), "<br>"); //cdeab
+document.write("substring(2,5) : " , str.substring(2,5), "<br>");//cde
+
+document.write("substr(2,50) : " , str.substr(2,50), "<br>"); //
+document.write("substr(2) : " , str.substr(2), "<hr>"); //
+//abcdeabcde
+//---------------------------------------------------------------
+document.write("replace('de','QQQ') : " , str.replace('de','QQQ'), "<hr>"); //
+document.write("replace(/de/,'QQQ') : " , str.replace(/de/,'QQQ'), "<hr>"); 
+document.write("replace(/de/g,'QQQ') : " , str.replace(/de/g,'QQQ'), "<hr>"); 
+
+//---------------------------------------------------------------
+str = "aa,bb,cc:dd,ee,ff";
+var arr = str.split(":");
+for(let i in arr){
+    document.write( arr[i], "<br>");
+}
+
+document.write(  "<hr>");
+//-------------------------------------------------------------字串應用範例
+var fileStr = "Sara.smile.gif";
+var fileName, fileExt;
+var dotPos = fileStr.lastIndexOf(".");
+fileName = fileStr.substring(0, dotPos);
+fileExt = fileStr.substr(dotPos+1);
+document.write(`主檔名 : ${fileName} <br>`);
+document.write(`副檔名 : ${fileExt} <br>`);
+
+//---------------顯示是否是被允許的副檔名
+//被允許的副檔名: bmp, png, gif, ico
+var extAllowed = ["bmp", "png", "gif", "ico"];
+
+if(extAllowed.indexOf(fileExt)=== -1) {
+    document.write(`副檔名 : ${fileExt} 不是合法的圖片格式`)
+} else {
+    document.write(`副檔名 : ${fileExt} 是可被接受的圖片格式`)
+}
+/**/
+</script>  
+
+<h2>加碼......</h2>
+<script>
+function getFileInfo(fileStr) { 
+    //參數fileStr放的是完整檔名
+    //回傳一個陣列, 陣列中索引值為0的放主檔名, 陣列中索引值為1的放主檔名,
+    let dotPos = fileStr.lastIndexOf(".");
+    let fileName = fileStr.substring(0, dotPos);
+    let fileExt = fileStr.substr(dotPos+1);
+    return [fileName, fileExt];
+}
+
+//被允許的副檔名: bmp, png, gif, ico
+var extAllowed = ["bmp", "png", "gif", "ico"];
+
+var fileStr = "Sara.smile.ppt";
+var fileInfo = getFileInfo(fileStr);
+
+document.write(`主檔名:${fileInfo[0]}<br>`);
+document.write(`副檔名:${fileInfo[1]}<br>`);
+
+/* if(extAllowed.indexOf(fileInfo[1])=== -1) {
+    document.write(`副檔名 : ${fileInfo[1]} 不是合法的圖片格式`)
+} else {
+    document.write(`副檔名 : ${fileInfo[1]} 是可被接受的圖片格式`)
+} */
+</script>
+
+<h2>加碼......2</h2>
+<script>
+function getFileInfo(fileStr) { 
+    //參數fileStr放的是完整檔名
+    //回傳一個陣列, 陣列中索引值為0的放主檔名, 陣列中索引值為1的放主檔名,
+    let dotPos = fileStr.lastIndexOf(".");
+    let name = fileStr.substring(0, dotPos); //"Sara.smile"
+    let ext = fileStr.substr(dotPos+1); //"gif"
+    return {name, ext};
+}
+
+//被允許的副檔名: bmp, png, gif, ico
+var extAllowed = ["bmp", "png", "gif", "ico"];
+
+var fileStr = "Sara.smile.ppt";
+var file = getFileInfo(fileStr);
+console.log(file);
+document.write(`主檔名:${file.name}<br>`)
+document.write(`副檔名:${file.ext}<br>`)
+
+
+
+/* if(extAllowed.indexOf(fileInfo[1])=== -1) {
+    document.write(`副檔名 : ${fileInfo[1]} 不是合法的圖片格式`)
+} else {
+    document.write(`副檔名 : ${fileInfo[1]} 是可被接受的圖片格式`)
+} */
+</script>
+</body>
+</html>

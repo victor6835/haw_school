@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style>
+	h2 {
+		color:deeppink;
+	}
+</style>
+</head>
+<body>
+<h2>------------arrow function</h2>
+<script type="text/javascript">
+//===0 匿名函數
+var getArea = function (radius) {
+	return radius*radius*3.14;
+}
+document.write("<p>半徑1的圓面積 : ", getArea(1), "</p>");
+
+
+//===1 可以改寫成箭頭函數
+//省略function關鍵字, 改用箭頭指向所需執行的敍述區塊
+var getArea2 =  (radius) => {
+	return radius*radius*3.14;
+}
+document.write("<p>半徑10的圓面積 : ", getArea2(10), "</p>");
+
+
+//===2 箭頭函數的簡略寫法 
+//若只要執行一行敍述，且該敍述的目的是回傳一個值，
+//則{}和return可以省略
+var getArea3 =  (radius) => radius*radius*3.14;
+
+document.write("<p>半徑100的圓面積 : ", getArea3(100), "</p>");
+
+
+//===3 箭頭函數的簡略寫法
+//參數列若只有一個參數，則左邊的()可以省略
+var getArea4 =  radius => radius*radius*3.14;
+
+document.write("<p>半徑100的圓面積 : ", getArea4(1000), "</p>");
+
+
+//=== 箭頭函數的簡略寫法
+//若没有參數，則左邊的()不可以省略
+var sayHi = ()=>document.write("Hi~<hr>");
+sayHi();
+
+//===4搭配預設參數
+var sayHi_2 = (msg="Hello")=>document.write(msg, "~<hr>");
+sayHi_2();
+</script>
+
+
+<h2>-----------在呼叫函式時, 若需要傳送回呼函式(callback function), 可使用匿名函式</h2>
+<script>
+//Array.map()可用原陣列產生另一個陣列
+var arr = [11, 22, 33];
+var arr2 = arr.map(function(data) {
+	return data+1000;
+}); 
+document.write(arr2,  "<br>");	
+</script>
+
+
+<h2>------------回呼函式可改用arrow function來簡化</h2>
+<script>
+var arr = [11, 22, 33];
+var arr2 = arr.map(data => data+1000); 
+document.write(arr2,  "<br>");	
+</script>
+
+
+<h2>------------filter(), 使用匿名函式</h2>
+<script>
+var priceArr = [450, 320, 600, 200, 700];
+//找出價格小於500
+var arr = priceArr.filter(function(price) {
+	return price<500;
+})	
+document.write( arr, "<br>");
+</script> 
+
+
+<h2>------------fileter(), 使用arrow function</h2>
+<script>
+var priceArr = [450, 320, 600, 200, 700];
+//找出價格小於500//滿足這個條件的資料才是我們要的
+var arr = priceArr.filter(price => price<500); 
+document.write( arr, "<br>");
+
+//filter價格大於等於500//滿足這個條件的資料才是我們要的
+var arr2 = priceArr.filter(price => price>=500); 
+document.write( arr2, "<br>");
+</script>  
+
+
+<h2>------------find(), 使用arrow function</h2>
+<script>
+var priceArr = [450, 320, 600, 200, 700];
+//找出價格大於500的資料
+var data = priceArr.find(price =>price>500);
+
+document.write(`找到的資料 : ${data}<br>`); 
+</script>  
+
+
+<h2>------------array.reduce() 使用 callback function</h2>
+<script>
+//reduce(): 將陣列中的資料經過處理後縮減到一個值	
+var numbers = [15, 2, 1, 4]; //15, 2
+var x = numbers.reduce(function(total, data) { 
+	return total+data; //0+15+2
+}, 0);
+
+document.write("總計 : ", x, "<br>");
+</script>
+
+<h2>------------array.reduce() 使用 arrow function</h2>
+<script>
+//reduce(): 將陣列中的資料經過處理後縮減到一個值	
+var numbers = [15, 2, 1, 4]; //15, 2
+var x = numbers.reduce((total, data) => total+data*100 , 0);
+
+document.write("總計 : ", x, "<br>");
+</script>
+
+<h2>------------array.reduce() 使用 callback function</h2>
+<script>
+//reduce(): 將陣列中的資料經過處理後縮減到一個值	
+var numbers = [15, 2, 1, 4]; //15, 2
+var x = numbers.reduce(function(total, data) { 
+	return total-data; 
+}, 100); //reduce的第二個參數是指total的初值, 如果省略, 則陣列中的第一個值即為total的初值
+
+document.write("總計 : ", x, "<br>");
+</script>
+
+<h2>------------array.reduce() 使用 callback function</h2>
+<script>
+//reduce(): 將陣列中的資料經過處理後縮減到一個值	
+var numbers = [15, 2, 1, 4]; //15, 2
+var x = numbers.reduce(function(total, data) { 
+	return total-data; 
+}); //reduce的第二個參數是指total的初值, 如果省略, 則陣列中的第一個值即為total的初值
+
+document.write("總計 : ", x, "<br>");
+</script>
+<!---->
+</body>
+</html>

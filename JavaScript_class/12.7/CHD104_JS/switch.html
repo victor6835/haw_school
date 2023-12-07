@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style>
+	h2{
+		color:deeppink;
+	}
+</style>
+</head>
+<body>
+
+<h2>switch句型</h2>
+<script>
+	var lowType = "1";
+	var education = true;
+	var amount;
+
+	switch(lowType) {
+		case "1":
+			amount = 5000;
+			if(education === true) {
+				amount = amount + 1000;
+			}
+			break;
+		case "2":
+			amount = 3000;
+			break;
+		case "3":
+			amount = 1000;	
+			break;
+		default : 
+			amount = 0;					
+	}
+	document.write( "補助款 : ", amount, "<br>");
+</script>  
+
+</body>
+</html>

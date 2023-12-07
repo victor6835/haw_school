@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keyword" content="HTML,CSS,Javascript">
+<title>Examples</title>
+<style>
+	h2 {
+		color:deeppink;
+	}
+</style>
+</head>
+
+<body>
+<h2>建立2維陣列</h2>
+<script>
+var arr = new Array( [1, 2, 3, 4], [11, 12, 13, 14], [21, 22, 23, 24]);
+
+for(var i=0; i<arr.length; i++){
+	document.write( arr[i], "<br>"); //arr[0] , arr[1] , arr[2]
+}
+// console.log(arr);
+</script>
+
+
+<h2>將2維陣列輸出到table中</h2>
+<script>
+var arr = [[1, 2, 3, 4], [11, 12, 13, 14], [21, 22, 23, 24, 25]];
+
+document.write("<table border='1' cellspacing='0'>");
+
+for(var i=0; i<arr.length; i++){ //i:2
+	document.write("<tr>");
+	for(var j=0; j<arr[i].length; j++) {
+		document.write(`<td>${arr[i][j]}</td>`)
+	}
+	document.write("</tr>");
+}
+
+document.write("</table>");
+</script>
+
+
+<h2>將2維陣列輸出到table中---------2</h2>
+<script>
+var arr = [[1, 2, 3, 4], [11, 12, 13, 14], [21, 22, 23, 24, 25]];
+var str = "";
+//str:"<table border='1' cellspacing='0'><tr><td>1</td><td>2</td>"
+str += "<table border='1' cellspacing='0'>"; 
+
+for(var i=0; i<arr.length; i++){ //i:0
+	str += "<tr>";
+	for(var j=0; j<arr[i].length; j++) { //j:1
+		str += `<td>${arr[i][j]}</td>`; //arr[i][j]:2
+	}
+	str += "</tr>";
+}
+str += "</table>";
+
+document.write(str);
+console.log(str);
+</script>
+
+
+<h2>巢狀迴圈for...while</h2>
+<script>
+var arr = [[1, 2, 3, 4], [11, 12, 13, 14], [21, 22, 23, 24, 25]];
+var str = "";
+
+str += "<table border='1' cellspacing='0'>";
+
+for(var i=0; i<arr.length; i++){ //i:0
+	str += "<tr>";
+
+	let j = 0;
+	let length = arr[i].length;
+	while (j<length) { //j<4
+		str += `<td>${arr[i][j]}</td>`;
+		j++;
+	}	
+	
+	str += "</tr>";
+}
+str += "</table>";
+
+document.write(str);
+</script>
+<!--  -->
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>event bubble</title>
+<style>
+form {background-color:#FFC}
+</style>
+</head>
+<body id="myBody">
+<p>1111111111111</p>    
+<p>1111111111111</p>
+<p>1111111111111</p>
+
+<form id="myForm">
+  <p>這裡是表單</p>
+  <p>這裡是表單</p>
+  <p>這裡是表單</p>
+  <input id="btn" type="button" value="click me">
+  <p>這裡是表單</p>
+  <p>這裡是表單</p>
+  <p>這裡是表單</p>
+</form>
+
+<script type="text/javascript">
+function btn_click(e){
+	window.alert("button 被按");
+  //阻止蔓延現象
+  //??????
+}
+
+function myForm_click(){
+	window.alert("myForm 被按");
+}	
+
+function myBody_click(){
+	window.alert("myBody 被按");
+}
+
+function init(){
+  //--------------------設定變數的初值
+
+  //--------------------去server端要一些資料回來
+
+  //--------------------設定事件處理器
+  document.getElementById("btn").onclick = btn_click;
+  //設定myForm, myBody的點按事件
+
+  //??????
+}
+
+
+window.onload = init;
+</script>
+</body>
+</html>

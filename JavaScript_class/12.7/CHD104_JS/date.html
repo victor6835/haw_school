@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<style>
+	h2 {
+		color:deeppink;
+	}
+</style>
+</head>
+
+<body>
+<div>現在時刻 : <span id="timePanel"></span></div>	
+
+<script>
+//----------------ex1 ,	  
+var now = new Date();
+if(now.getHours()<12) {
+	document.write("早安~<br>");
+} else if(now.getHours()<18) {
+	document.write("午安~<br>");
+} else {
+	document.write("晚安~<br>");
+}
+
+//-----------------ex2, 追追追
+var birthday = new Date(2000, 2, 21);
+document.write(`出生當天在星期${birthday.getDay()}<br>`);
+
+//-----------------ex3, 電子時鐘
+function showTime() {
+	let now = new Date();
+	document.getElementById("timePanel").innerText = 
+	`${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()}`;	
+}
+
+showTime();
+setInterval(showTime, 1000);
+	</script>    
+</body>
+</html>

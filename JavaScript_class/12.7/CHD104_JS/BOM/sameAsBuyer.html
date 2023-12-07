@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+</head>
+
+<body>
+<table width="500" border="1" align="center">
+<caption>確認訂單</caption>
+<form action="nextPage.php">
+  <tr><td colspan="2" style="background-color:#B99BCA">購買者資料</td></tr>
+  <tr>
+    <td>email</td>
+    <td><input type="text" name="memEmail" id="email" maxlength="30" size="30" value="Ann@gmail.com"/></td>
+  </tr>  
+  <tr>
+    <td width="120">聯絡電話</td>
+    <td><input type="text" name="memPhone" id="phone" maxlength="10" size="10" value="03-168168"/></td>
+  </tr>
+
+  <tr>
+    <td>地址</td>
+    <td><input type="text" name="addr" id="addr" maxlength="50" size="50" value="中正路"/></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="background-color:#B99BCA">收件人資料
+<input type="checkBox" id="sameAs" />與購買者相同</td>   
+  </tr>
+  <tr>
+    <td>聯絡電話</td>
+    <td><input type="text" name="recieverPhone" id="rPhone" maxlength="10" size="10"/></td>
+  </tr>  
+  <tr>
+    <td>收件人地址</td>
+    <td><input type="text" name="recieverAddr" id="rAddr" maxlength="50" size="50"/></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><input type="button" value="下一步" /></td>
+  </tr>
+</form>
+</table>
+<script>
+function setAsBuyer(){ //收件者同購買者
+  document.getElementById("rPhone").value = document.getElementById("phone").value;
+  document.getElementById("rAddr").value = document.getElementById("addr").value;
+}
+
+//設定點按事件發生在sameAs時要執行 setAsBuyer()
+document.getElementById("sameAs").onclick=setAsBuyer;
+</script>
+
+</body>
+</html>

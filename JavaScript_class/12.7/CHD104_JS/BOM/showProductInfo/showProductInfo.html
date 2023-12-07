@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product {
+            width:300px;
+            border:1px dotted deeppink
+        }
+        .prodImg {
+            width:90px;
+            margin:5px;
+            border:2px dotted blue;
+        }
+
+        input:checked + img {
+            border:2px dashed deeppink;
+        }
+
+        input[name="choice"] {
+            display:none
+        }
+    </style>
+</head>
+<body>
+<label for="choice1">
+    <input type="radio" id="choice1" name="choice" checked>    
+    <img src="images/1.gif" class="prodImg">    
+</label>
+
+<label for="choice2">
+    <input type="radio" id="choice2" name="choice">
+    <img src="images/2.gif" class="prodImg">
+</label>
+
+<label for="choice3">
+    <input type="radio" id="choice3" name="choice"> 
+    <img src="images/3.gif" class="prodImg">
+</label>
+
+
+<div id="showPanel" >
+ 
+</div>
+
+<script>
+let products = [
+    `<div class="product">
+        <ol>
+            <li>書號: <span>1</span></li>
+            <li>書名: <span>PHP動態網頁入門實務</span></li>
+            <li>價格: <span>110</span></li>
+            <li>作者: <span>馬孝瑀</span></li>
+        </ol>
+    </div>`,
+
+    `<div class="product">
+        <ol>
+            <li>書號: <span>2</span></li>
+            <li>書名: <span>Acess2000 程式設計</span></li>
+            <li>價格: <span>600</span></li>
+            <li>作者: <span>郭尚君</span></li>
+        </ol>
+    </div>`,
+
+    `<div class="product">
+        <ol>
+            <li>書號: <span>3</span></li>
+            <li>書名: <span>VisualC++ 入門進階</span></li>
+            <li>價格: <span>510</span></li>
+            <li>作者: <span>郭尚君</span></li>
+        </ol>
+    </div>`
+    ];
+
+let prodImgs = document.getElementsByClassName("prodImg");
+for(let i=0; i<prodImgs.length; i++) {
+    prodImgs[i].onclick = function() {
+        document.getElementById("showPanel").innerHTML = products[i];
+    }
+} 
+
+document.getElementById("showPanel").innerHTML = products[0];
+</script>
+</body>
+</html>

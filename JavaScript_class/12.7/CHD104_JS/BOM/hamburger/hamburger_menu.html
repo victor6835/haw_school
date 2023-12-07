@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>漢堡堡</title>
+<style type="text/css">
+#btnHam {
+	width:44px;
+	height:36px;
+	display:block;
+	position:fixed;
+}	
+
+#menu {
+	position:fixed;
+	left:0px;
+	top:44px;
+	width:80px;
+	height:160px;
+	padding-left:6px;
+	background-color:#bfbfef;
+	transition: left  1s;
+}
+
+
+
+/*
+加入menu的hidden類別*/
+#menu.hidden {
+	left:-86px;
+} 
+
+
+a {
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration:underline;
+	color:deeppink;
+	font-style:italic;
+}
+
+.borderPink {
+	border:2px dotted deeppink;
+}
+</style>
+<script type="text/javascript">
+
+	window.addEventListener("load", function() {
+		//------btnHam漢堡按鈕被點按時
+		document.getElementById("btnHam").onclick = function() {
+			//取得選單的參考
+			let menu = document.getElementById("menu");
+			//---------------------------方法一, 檢測是否有hidden類, 再決定是要加入或移除
+/* 			if(menu.classList.contains("hidden")) { //"hidden"
+				menu.classList.remove("hidden");
+			} else { //
+				menu.classList.add("hidden");
+			} */
+	
+			//---------------------------方法二, 有就移除，没有就加入
+			menu.classList.toggle("hidden");
+		};	
+	
+	}, false);
+	
+	/**/
+	</script>
+</head>
+<body>
+
+<button id="btnHam" class=""><img src="hamburger.png" width="28"></button>
+<div id="menu" class="borderPink hidden">
+	<div><a href="">menu 1</a></div>
+	<div><a href="">menu 2</a></div>
+	<div><a href="">menu 3</a></div>
+	<div><a href="">menu 4</a></div>
+	<div><a href="">menu 5</a></div>
+	<div><a href="">menu 6</a></div>
+	<div><a href="">menu 7</a></div>
+	<div><a href="">menu 8</a></div>
+</div>
+<div>data 01</div>
+<div>data 02</div>
+<div>data 03</div>
+<div>data 04</div>
+<div>data 05</div>
+<div>data 06</div>
+<div>data 07</div>
+<div>data 08</div>
+<div>data 09</div>
+<div>data 10</div>
+<div>data 11</div>
+<div>data 12</div>
+<div>data 13</div>
+<div>data 14</div>
+<div>data 15</div>
+<div>data 16</div>
+<div>data 17</div>
+<div>data 18</div>
+<div>data 19</div>
+<div>data 20</div>
+<div>data 21</div>
+<div>data 22</div>
+<div>data 23</div>
+<div>data 24</div>
+<div>data 25</div>
+<div>data 26</div>
+<div>data 27</div>
+<div>data 28</div>
+<div>data 29</div>
+<div>data 30</div>
+<div>data 31</div>
+<div>data 32</div>
+<div>data 33</div>
+<div>data 34</div>
+<div>data 35</div>
+<div>data 36</div>
+<div>data 37</div>
+<div>data 38</div>
+<div>data 39</div>
+<div>data 40</div>
+<div>data 41</div>
+<div>data 42</div>
+<div>data 43</div>
+<div>data 44</div>
+<div>data 45</div>
+<div>data 46</div>
+<div>data 47</div>
+<div>data 48</div>
+<div>data 49</div>
+<div>data 50</div>
+<div>data 51</div>
+<div>data 52</div>
+<div>data 53</div>
+<div>data 54</div>
+<div>data 55</div>
+<div>data 56</div>
+<div>data 57</div>
+<div>data 58</div>
+<div>data 59</div>
+<div>data 60</div>
+<div>data 61</div>
+<div>data 62</div>
+<div>data 63</div>
+<div>data 64</div>
+<div>data 65</div>
+<div>data 66</div>
+<div>data 67</div>
+<div>data 68</div>
+<div>data 69</div>
+<div>data 70</div>
+<div>data 71</div>
+<div>data 72</div>
+<div>data 73</div>
+<div>data 74</div>
+<div>data 75</div>
+<div>data 76</div>
+<div>data 77</div>
+<div>data 78</div>
+<div>data 79</div>
+<div>data 80</div>
+<div>data 81</div>
+<div>data 82</div>
+<div>data 83</div>
+<div>data 84</div>
+<div>data 85</div>
+<div>data 86</div>
+<div>data 87</div>
+<div>data 88</div>
+<div>data 89</div>
+<div>data 90</div>
+<div>data 91</div>
+<div>data 92</div>
+<div>data 93</div>
+<div>data 94</div>
+<div>data 95</div>
+<div>data 96</div>
+<div>data 97</div>
+<div>data 98</div>
+<div>data 99</div>
+<div>data 100</div>
+
+
+</body>
+</html>

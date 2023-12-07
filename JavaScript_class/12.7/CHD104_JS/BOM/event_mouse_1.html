@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+
+</head>
+
+<body>
+<input type="button" id="btn" value="test">
+
+<table align="center" cellspacing="0" border="1">
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+    <tr><td>11111111</td><td>aaaaaaaaaa</td></tr>
+</table> 
+
+<script>
+//事件處理器
+function highlight(e){ 
+    let obj = e.target;
+    obj.style.backgroundColor="pink";
+    console.log("e.target : ", e.target.tagName); //TD
+    console.log("e.currentTarget : ", e.currentTarget.tagName); //TD
+    console.log("this : ", this.tagName); //TD  
+}   
+
+function normal(e){ 
+    let obj = e.target;
+    obj.style.backgroundColor="white";
+}   
+
+//取得所有的td元素
+var tds = document.getElementsByTagName("td");
+
+for(let i=0; i<tds.length; i++) { //一一將td元素都設定事件處理器
+    tds[i].onmouseover = highlight;
+    tds[i].onmouseout = normal;
+}
+
+/* //一一將td元素都設定事件處理器
+tds[0].onmouseover = highlight;  //產生event物件, event.target->tds[0]
+tds[0].onmouseout = normal; //產生event物件, event.target->tds[0]
+
+tds[1].onmouseover = highlight; //產生event物件, event.target->tds[1]
+tds[1].onmouseout = normal;
+
+tds[2].onmouseover = highlight;
+tds[2].onmouseout = normal;
+
+tds[3].onmouseover = highlight;
+tds[3].onmouseout = normal;  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+//當滑鼠移到索引值0的格位上
+tds[0].onmouseover = highlight;
+tds[0].onmouseout = normal; 
+
+//當滑鼠移到索引值0的格位上
+tds[1].onmouseover = highlight;
+tds[1].onmouseout = normal; 
+
+//當滑鼠移到索引值0的格位上
+tds[2].onmouseover = highlight;
+tds[2].onmouseout = normal;
+
+//當滑鼠移到索引值0的格位上
+tds[3].onmouseover = highlight;
+tds[3].onmouseout = normal;
+*/
+
+//------------------
+//當滑鼠移到tds[0]格位上
+//tds[0].onmouseover = highlight;//立馬產生一個事件物件, 其內有target記錄事件是發生在tds[0]
+//tds[0].onmouseout = normal; 
+//產生事件物件之後, 會去呼叫事件處理器, 並將事件物件傳入事件處理器
+
+
+/*
+console.log("e.target : ", e.target.tagName); //TD
+console.log("e.currentTarget : ", e.currentTarget.tagName); //TD
+console.log("this : ", this.tagName); //TD   
+*/ 
+</script>  
+</body>
+</html>

@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+</head>
+<body>
+<script type="text/javascript">
+//---------------------物件解構賦值
+/*
+var obj = {x:10, y:20};
+var x = obj.x;
+var y = obj.y;
+
+var {x, y} = obj;
+document.write("x : ", x, "<br>");
+document.write("y : ", y, "<br>");
+   */
+
+//---------------------對應不到會得到undefined
+/*  
+var obj = {x:10, y:20};
+var {x, y, z} = obj;
+document.write("x : ", x, "<br>");
+document.write("y : ", y, "<br>");
+document.write("z : ", z, "<br>"); 
+ */
+
+//---------------------對應不到, 可以給預設值
+/*  
+var obj = {x:10, y:20};
+var {x, y, z=100} = obj;
+document.write("x : ", x, "<br>");
+document.write("y : ", y, "<br>");
+document.write("z : ", z, "<br>"); 
+ */
+
+//---------------------下列若不含宣告的關鍵字, 會產生語法錯誤
+/*  
+var obj = {x:10, y:20};
+//{x, y} = obj; //會產生語法錯誤
+({x, y} = obj); //解決方法
+document.write("x : ", x, "<br>");
+document.write("y : ", y, "<br>");
+ */
+
+//---------------------可以解構後指派給新的物件
+//物件中的屬性可以解構並產生跟該屬性不一樣的變數名稱。
+/* 
+var obj = {x:10, y:20};
+//var a = obj.x;
+//var b = obj.y;
+
+var {x:a, y:b} = obj //將obj.x的值給變數a, 將obj.y的值給變數b
+document.write("a : ", a, "<br>");
+document.write("b : ", b, "<br>");
+  */
+
+//---------------------可以指派給新的變數名稱且當對應不到時給預設值
+/*  
+var obj = {x:10, y:20};
+var {x:a, y:b, z:c=1000} = obj //將obj.x的值給變數a, 將obj.y的值給變數b, 將obj.z的值給變數c, 對應不到時給預設值1000
+document.write("a : ", a, "<br>");
+document.write("b : ", b, "<br>");
+document.write("c : ", c, "<br>");
+ */
+
+
+//計算2個點之間的距離
+/* 
+function distance(x1,y1,x2=0,y2=0){ //x1:3,y1:4是第一點座標, x2:0,y2:0是第二點的座標
+	let x = x1-x2; //3
+	let y = y1-y2; //4
+	return Math.sqrt(x*x+y*y); //9+16
+}
+
+let point1 = {x:3, y:4};
+let point2 = {x:6, y:8};
+document.write("distance(point1.x, point1.y, point2.x, point2.y) : ", distance(point1.x, point1.y, point2.x, point2.y), "<br>");
+document.write("distance(point1) : ", distance(point2.x, point2.y), "<br>");
+  */
+
+
+//------------可用在函式參數中以物件解構的方式提取物件中某屬性的值,再搭配預設值
+//第一點座標給{x1,y1}, 第一點座標給{x2,y2}=若第二點没給,第二點的座標預設值為{x:0,y:0}
+
+function distance2({x:x1,y:y1}, {x:x2,y:y2}={x:0,y:0}) { //{x:x1,y:y1} = point1,  {x:x2,y:y2} = point2
+	let x = x1-x2;
+	let y = y1-y2;
+	return Math.sqrt(x*x+y*y);
+}
+
+let point1 = {x:3, y:4};
+let point2 = {x:6, y:8};
+document.write("distance2(point1, point2) : ", distance2(point1, point2), "<br>");
+document.write("distance2(point1) : ", distance2(point1), "<br>");
+/*  */
+
+</script>    
+</body>
+</html>

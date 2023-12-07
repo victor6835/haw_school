@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+</head>
+<body>
+
+<h2>具名函式</h2>	
+<script>
+sayHi();	
+function sayHi(){ //============function statement, 有hoist的現象
+	document.write("Hi~<br>");
+}
+document.write("<br>");
+
+</script>    
+
+
+<h2>匿名函式</h2>	
+<script>
+//sayHello(); //error
+var sayHello = function(){ //sayHello:undefine
+	document.write("Hello~<br>");
+}
+sayHello();
+/**/
+</script> 
+</body>
+</html>

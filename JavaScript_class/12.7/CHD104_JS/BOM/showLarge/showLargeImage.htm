@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>點小圖秀大圖</title>
+<style>
+	div img{
+		width: 55px;
+		height: 56px;
+	}
+</style>
+</head>
+
+<body>
+<div >
+<img  id="large" src="images/M1_001.gif" style="width:202px;height:185px;">
+</div>
+<div>
+<img src="images/M1_001.gif" class="small"/>
+<img src="images/M1_002.gif" class="small"/>
+<img src="images/M1_003.gif" class="small"/>
+<img src="images/M1_004.gif" class="small"/>
+<img src="images/M1_005.gif" class="small"/>
+</div>
+<script>
+function showLarge(e){
+  let small = e.target; //e.target記錄觸發此事件的物 件
+
+  document.getElementById("large").src = small.src;
+}
+
+function init(){
+	let smalls = document.getElementsByClassName("small");
+
+	for(let i=0; i<smalls.length; i++) {
+		smalls[i].onclick = showLarge;
+	}
+}
+
+window.addEventListener("load", init, false);
+</script>
+</body>
+</html>

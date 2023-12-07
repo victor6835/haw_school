@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Examples</title>
+</head>
+
+<body>
+  <img src="add_2.png" id="btnAddSpot">
+  
+
+
+  <form id="myForm">
+    <div class="spot">
+      景點<input type="text" name="spot"><img src="trash.png">
+    </div>
+    <input type="submit" id="btnSend" value="送出">
+  </form>
+
+  <script type="text/javascript">
+    function $id(id) {
+      return document.getElementById(id);
+    }
+
+    function addSpot(){
+      let myForm = $id("myForm");
+      let btnSend = $id("btnSend");
+      let spot = document.getElementsByClassName("spot")
+      let newSpot = spot.cloneNode(true);
+      newSpot.style.display = "block";
+      newSpot.getElementByTagName("img")[0].onclick
+      myForm.insertBefore(newSpot, btnSend);
+    } 
+
+    function removeSpot(e){
+      let trash = e.target;
+      $id("myForm").removeChild(trash.parentNode);
+    }
+
+
+    window.addEventListener("load", function () {
+
+      //---------------btnAddSpot.onclick
+      $id("btnAddSpot").onclick = addSpot;
+    })
+  </script>
+</body>
+
+</html>
