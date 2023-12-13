@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab</title>
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+        .tab{
+            width: 600px;
+            margin-inline: auto;
+        }
+        .tab-nav{
+            display: flex;
+            background-color: #222;
+        }
+        .tab-link{
+            text-decoration: none;
+            color: #eee;
+            padding: 10px 20px;
+        }
+        .tab-link.active{
+            background-color: #fff8c4;
+            color: #000;
+            animation: fadeIn 800ms;
+        }
+        .tab-panel{
+            padding: 10px;
+            background-color: #fff8c4;
+            color: #222;
+            display: none;
+        }
+        .tab-panel.active{
+            display: block;
+            animation: fadeIn 800ms;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab-nav">
+            <a href="#tab-1" class="tab-link active">tab 1</a>
+            <a href="#tab-2" class="tab-link ">tab 2</a>
+            <a href="#tab-3" class="tab-link">tab 3</a>
+            <a href="#tab-4" class="tab-link">tab 4</a>
+        </div>
+        <div class="tab-panel active" id="tab-1">
+            <h3>tab 1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, libero, voluptas laborum, earum corporis placeat odit fugiat voluptatem adipisci delectus harum repudiandae? Quasi mollitia, blanditiis sapiente esse repellat optio doloremque.</p>
+        </div>
+        <div class="tab-panel" id="tab-2">
+            <h3>tab 2</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, libero, voluptas laborum, earum corporis placeat odit fugiat voluptatem adipisci delectus harum repudiandae? Quasi mollitia, blanditiis sapiente esse repellat optio doloremque.</p>
+        </div>
+        <div class="tab-panel" id="tab-3">
+            <h3>tab 3</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, libero, voluptas laborum, earum corporis placeat odit fugiat voluptatem adipisci delectus harum repudiandae? Quasi mollitia, blanditiis sapiente esse repellat optio doloremque.</p>
+        </div>
+        <div class="tab-panel" id="tab-4">
+            <h3>tab 4</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, libero, voluptas laborum, earum corporis placeat odit fugiat voluptatem adipisci delectus harum repudiandae? Quasi mollitia, blanditiis sapiente esse repellat optio doloremque.</p>
+        </div>
+    </div>
+    <script>
+        let tabLinks = document.querySelectorAll(".tab-link");
+        for( let tabLink of tabLinks){
+            tabLink.onclick = function(){
+                let href = this.getAttribute("href");//取得屬性
+                console.log(href);
+
+                document.querySelector(".tab-panel.active").classList.remove("active");
+                document.querySelector(href).classList.add("active");
+                //刪除原本有active的，再將點擊的加上active
+
+                document.querySelector(".tab-link.active").classList.remove("active");
+                this.classList.add("active")
+                 //刪除原本有active的，再將點擊的加上active
+            }
+        }
+    </script>
+</body>
+</html>

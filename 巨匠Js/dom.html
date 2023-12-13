@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">hello Javascript</h1>
+        <p class="slogan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eligendi officia quam. Suscipit voluptate autem odit doloremque dicta, aperiam quasi.</p>
+        <ul>
+            <li class="list"><a href="#">list1</a></li>
+            <li class="list"><a href="#">list2</a></li>
+            <li class="list"><a href="#">list3</a></li>
+            <li class="list"><a href="#">list4</a></li>
+            <li class="list"><a href="#">list5</a></li>
+            <li class="list"><a href="#">list6</a></li>
+        </ul>
+        <div class="content">
+            <h2>title</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia dolore ut error! Eaque?
+            </p>
+        </div>
+    </div>
+    <script>
+        // let title =  document.getElementById("title");
+        // console.log(title);
+        // let slogan = document.getElementsByClassName("slogan")[0]
+        // console.log(slogan);
+        // let list = document.getElementsByClassName("list")
+        // for(let li of list){
+        //     console.log(li)
+        // }
+        // let p = document.getElementsByTagName("p");
+
+// -----------------------------------------------
+
+        //querySelector 抓的是第一個
+        //querySelectorAll 抓的是全部
+        let title = document.querySelector("title");
+        let slogan = document.querySelector(".slogan")
+        let list = document.querySelector(".list")
+        let lists = document.querySelectorAll(".list")
+        for(li of lists){
+        console.log(li);
+
+        }
+    </script>
+
+</body>
+</html>
