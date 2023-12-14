@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <script>
+        //函式宣告式
+        function test(){
+            let x = 100;
+            return x;
+        }
+        // console.log(test())
+        
+        //函式表達式
+        let test2 = function(){
+            let y = 999;
+            return y;
+        }
+        // console.log(test2())
+
+        function square(w,h){
+            return(w*h);
+        }
+        console.log(square(200,128))
+
+        function go(x){
+            return x;
+        }
+        console.log(go())
+
+        //箭頭函式: 拿掉function字樣，小括號和大括號中間加上箭頭
+
+        // function asdf(){
+        //     return "asdf";
+        // }
+
+        // let asdf = ()=>{
+        //     return "asdf"
+        // }
+
+        // let asdf = function(x,y){
+        //     return x+y;
+        // }
+
+        let asdf = (x,y) => x + y;
+
+        //如果大括號內只有return，則大括號跟return皆可省略
+        // let asdf = ()=> 'asdf';
+
+        //如果只有一個參數，則連小括號都可省略
+        // let asdf = x => x;
+
+
+        // console.log(asdf(123,124))
+
+        //箭頭函式內有this 會抓到window，要注意有this 不要用箭頭函式
+        let obj = {
+            name:'test',
+            active:function(){
+                return this;
+            }
+        }
+        let obj2 = {
+            name: 'test',
+            active:()=>{
+                return this;
+            }
+        }
+        console.log(obj2.active())
+    </script>
+</body>
+</html>
