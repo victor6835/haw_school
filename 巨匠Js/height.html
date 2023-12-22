@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>height</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #098;
+            border: 10px solid #f00;
+            padding-top: 50px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse recusandae repellendus omnis totam aperiam voluptatem ut dolores quia ad eos saepe similique dolor sapiente dolore perferendis tempora, dignissimos voluptatum cupiditate.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse recusandae repellendus omnis totam aperiam voluptatem ut dolores quia ad eos saepe similique dolor sapiente dolore perferendis tempora, dignissimos voluptatum cupiditate.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse recusandae repellendus omnis totam aperiam voluptatem ut dolores quia ad eos saepe similique dolor sapiente dolore perferendis tempora, dignissimos voluptatum cupiditate.
+
+    </div>
+</body>
+<script>
+    let box = document.querySelector(".box");
+    console.log('clientHeight',box.clientHeight);//height + padding
+    console.log("offsetHeight", box.offsetHeight);//height + padding +border
+    console.log("scrollHeight",box.scrollHeight);//height + padding + overflow隱藏高度
+</script>
+</html>
