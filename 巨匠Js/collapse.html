@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摺疊選單</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .collapse{
+            width: 200px;
+            background-color: #ccc;
+            /* visibility: hidden;*/
+            opacity: 0;
+            height: 0;
+            overflow: hidden;           
+            transition: .2s;
+            /* padding: 25px; */
+        }
+        .collapse.active{
+            /* background-color: #098; */
+            opacity: 1;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <a href="#" data-target="#collapse-1" class="collapse-btn">click</a>
+    <div class="collapse" id="collapse-1">
+        <h2>title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, ex nihil, non sapiente consectetur, exercitationem laudantium laboriosam corrupti quo labore fuga sit placeat ipsum saepe necessitatibus quam inventore accusantium enim.</p>
+    </div>
+    <a href="#" data-target="#collapse-1" class="collapse-btn">click</a>
+    <div class="collapse" id="collapse-1">
+        <h2>title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, ex nihil, non sapiente consectetur, exercitationem laudantium laboriosam corrupti quo labore fuga sit placeat ipsum saepe necessitatibus quam inventore accusantium enim.</p>
+    </div>
+
+    <script>
+        let collapseBtns = document.querySelectorAll(".collapse-btn");
+        for(collapseBtn of collapseBtns){
+            collapseBtn.onclick = e =>{
+                let panel = e.target.nextElementSibling;
+                
+                panel.classList.toggle("active");
+                console.log(panel.style.height)
+                if(panel.style.height){
+                    panel.style.height = null;
+                }else{
+                    panel.style.height = panel.scrollHeight + 'px';
+                };
+                
+
+            }
+        }
+    </script>
+</body>
+</html>
