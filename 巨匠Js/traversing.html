@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traversing</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">hello JavaScript</h1>
+        <p class="slogan">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate quas natus expedita totam quo deserunt alias dolores dignissimos. Ducimus reprehenderit quaerat cupiditate iusto repellendus vel laboriosam vitae, quo consequatur ratione.</p>
+        <ul>
+            <li class="list"><a href="#">list1</a></li>
+            <li class="list"><a href="#">list2</a></li>
+            <li class="list"><a href="#">list3</a></li>
+            <li class="list"><a href="#">list4</a></li>
+            <li class="list"><a href="#">list5</a></li>
+            <li class="list"><a href="#">list6</a></li>
+        </ul>
+        <div class="content">
+            <h2>title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, non mollitia. Molestiae hic, consequatur obcaecati saepe aliquam, soluta nulla necessitatibus, iste labore commodi aut explicabo mollitia in tenetur sint quaerat!</p>
+        </div>
+    </div>
+</body>
+<script>
+    let el = document.querySelector("ul");
+    console.log(el.parentElement);//父元素
+    console.log(el.parentNode)//父節點
+    
+    //同輩元素
+    console.log(el.previousElementSibling);
+    console.log(el.nextElementSibling);
+
+    //同輩節點
+    console.log(el.nextSibling);
+    console.log(el.previousSibling);
+
+    console.log(el.children)//子元素
+    console.log(el.childNodes)//子節點
+
+    /*節點
+        元素節點
+        文字節點
+        註解節點*/ 
+</script>
+</html>

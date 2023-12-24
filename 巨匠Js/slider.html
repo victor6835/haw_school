@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .slider{
+            max-width: 1200px;
+            margin-inline: auto;
+            position: relative;
+        }
+        .slider-item{
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+
+            transition: .6s;
+        }
+        img{
+            vertical-align: middle;
+            width: 100%;
+            aspect-ratio: 1200 / 600;
+        }
+        .slider .slider-caption{
+            position: absolute;
+            width: 100%;
+            background-color: rgb(0 0 0 / .7);
+            color: #fff;
+            bottom: 0;
+            text-align: center;
+            padding-block: 10px;
+        }
+        .slider-item.active{
+            opacity: 1;
+        }    
+        .slider-nav{
+            position: absolute;
+            margin-top: 22%;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 50px;
+        }
+        .slider-nav a{
+            color: #fff;
+            font-size: 40px;
+            padding: 0 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slider-item active">
+            <img src="https://picsum.photos/1200/600/?random=10">
+            <div class="slider-caption">
+                <h4>Photo 1</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati consectetur accusamus a</p>
+            </div>
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/1200/600/?random=9">
+            <div class="slider-caption">
+                <h4>Photo 2</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati consectetur accusamus a</p>
+            </div>
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/1200/600/?random=8">
+            <div class="slider-caption">
+                <h4>Photo 3</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati consectetur accusamus a</p>
+            </div>
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/1200/600/?random=7">
+            <div class="slider-caption">
+                <h4>Photo 4</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati consectetur accusamus a</p>
+            </div>
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/1200/600/?random=6">
+            <div class="slider-caption">
+                <h4>Photo 5</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati consectetur accusamus a</p>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <a href="#" class="slider-prev"><i class="fa-solid fa-circle-arrow-left"></i></a>
+            <a href="#" class="slider-next"><i class="fa-solid fa-circle-arrow-right"></i></a>
+        </div>
+    </div>
+    <script>
+       // 選取所有的.slider-item元素，這是包含輪播圖片和相關內容的容器
+        let imgs = document.querySelectorAll(".slider-item");
+    
+        // 獲取輪播圖片的總數
+        let total = imgs.length;
+    
+        // 設置當前顯示的圖片索引，初始化為0，即第一張圖片
+        let currentIndex = 0;
+    
+        // 獲取“下一張”和“上一張”按鈕
+        let next = document.querySelector(".slider-next");
+        let prev = document.querySelector(".slider-prev");
+    
+        // 綁定“下一張”和“上一張”按鈕的點擊事件，分別呼叫slider函數
+        next.onclick = () => {slider()};
+        prev.onclick = () => { slider('prev') };
+    
+        // 定義slider函數，該函數用於切換輪播圖片
+        function slider(direction) {
+            console.log(currentIndex);
+    
+            // 根據方向設置新的currentIndex
+            if (direction === 'prev') {
+                // 如果方向是 'prev'，表示要顯示前一張圖片
+                // 這裡使用三元運算符來判斷是否已經到達第一張圖片，如果是，將 currentIndex 設為 total，否則保持不變
+                currentIndex = currentIndex === 0 ? total : currentIndex;
+                // 將 currentIndex 減 1，即顯示前一張圖片
+                currentIndex = (currentIndex - 1) % total;
+            } else {
+                // 如果方向不是 'prev'，表示要顯示下一張圖片
+                // 將 currentIndex 加 1，即顯示下一張圖片
+                currentIndex = (currentIndex + 1) % total;
+            }
+
+    
+            // 移除原來顯示的圖片的"active"類別
+            document.querySelector(".slider-item.active").classList.remove("active");
+    
+            // 將新的currentIndex對應的圖片添加"active"類別，使其顯示
+            imgs[currentIndex].classList.add("active");
+        }
+    
+        // 設置定時器，每隔3000毫秒（即3秒）自動執行一次slider函數，實現自動輪播效果
+        setInterval(slider, 3000);
+    </script>
+
+    
+</body>
+</html>
